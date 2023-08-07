@@ -22,12 +22,12 @@ export default defineNuxtConfig({
   modules: [
     '@nuxtjs/google-fonts',
     '@nuxt/image',
-    '@nuxtjs/eslint-module',
+    '@nuxtjs/eslint-module'
   ],
   googleFonts: {
     families: {
       Roboto: {
-        wght: [100,200,300,400,500,600,700,800, 900]
+        wght: [100, 200, 300, 400, 500, 600, 700, 800, 900]
       }
     }
   },

@@ -1,5 +1,6 @@
 dist
 public
+.eslintrc.js
 
 # ignore generate imports
 auto-imports.d.ts

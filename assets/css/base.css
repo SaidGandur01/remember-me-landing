@@ -1,3 +1,14 @@
+:root {
+  --color-text: #0F172A;
+  --buton-background: #84BC55;
+  --color-white: #ffffff;
+  --color-background-primary: #1D956A;
+  --color-text-secondary: #CCFCD0;
+  --color-border-gray: #e2e8f0;
+  --color-text-gray: #475569;
+  --color-text-tertiary: #8BFA96;
+}
+
 *,
 *::after,
 *::before {
@@ -17,4 +28,36 @@ html {
 body {
   font-family: 'Roboto', sans-serif;
   font-size: 1.4rem;
+}
+
+a:link {
+  text-decoration: inherit;
+  color: inherit;
+  cursor: auto;
+}
+
+a:visited {
+  text-decoration: inherit;
+  color: inherit;
+  cursor: auto;
+}
+
+.btn {
+  border-radius: 50px;
+  border: 2px solid var(--buton-background);
+  background: var(--buton-background);
+  color: var(--color-white);
+  letter-spacing: 0.1rem;
+}
+
+.btn-md {
+  padding: 1.2rem;
+  min-width: 15rem;
+}
+
+.btn-lg {
+  padding: 2rem 2.4rem;
+  font-weight: 700;
+  letter-spacing: 0.5rem;
+  font-size: 2rem;
 }
