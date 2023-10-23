@@ -36,7 +36,7 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
-    gap: 3rem;
+    gap: 5rem;
     padding: 2rem 4rem;
 
     h1 {
