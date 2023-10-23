@@ -7,6 +7,52 @@
   --color-border-gray: #e2e8f0;
   --color-text-gray: #475569;
   --color-text-tertiary: #8BFA96;
+
+  --color-brand-white-100: #FFFFFF; 
+  --color-brand-white-200: #F1F1F1;
+  --color-brand-white-200: #E8E8E8;
+
+  --color-brand-implemented-100: var(--color-brand-green-100);
+  --color-brand-implemented-200: var(--color-brand-green-200);
+  --color-brand-implemented-300: var(--color-brand-green-300);
+  --color-brand-implemented-400: var(--color-brand-green-400);
+  --color-brand-implemented-500: var(--color-brand-green-500);
+  --color-brand-implemented-600: var(--color-brand-green-600);
+
+  --color-brand-green-100: #84BC55;
+  --color-brand-green-200: #7CB050;
+  --color-brand-green-300: #92B476;
+  --color-brand-green-400: #B5CCA1;
+  --color-brand-green-500: #1D956A;
+  --color-brand-green-600: #8BFA96;
+
+  --color-brand-orange-100: #DF7D36;
+  --color-brand-orange-200: #B08A50;
+  --color-brand-orange-300: #B49B76;
+  --color-brand-orange-400: #CCB8A1;
+  --color-brand-orange-500: #977B52;
+  --color-brand-orange-600: #F8FA8B;
+
+  --color-brand-pink-100: #B530CB;
+  --color-brand-pink-200: #A350B0;
+  --color-brand-pink-300: #A476B4;
+  --color-brand-pink-400: #C1A1CC;
+  --color-brand-pink-500: #BC81B6;
+  --color-brand-pink-600: #69116B;
+
+  --color-brand-blue-100: #1F8FCE;
+  --color-brand-blue-200: #5082B0;
+  --color-brand-blue-300: #7696B4;
+  --color-brand-blue-400: #A1B0CC;
+  --color-brand-blue-500: #527297;
+  --color-brand-blue-600: #8BE6FA;
+
+  --color-brand-red-100: #CE1F1F;
+  --color-brand-red-200: #B05050;
+  --color-brand-red-300: #B47676;
+  --color-brand-red-400: #CCA1A1;
+  --color-brand-red-500: #A67070;
+  --color-brand-red-600: #FA8B8B;
 }
 
 *,
@@ -22,12 +68,15 @@
 }
 
 html {
+  scroll-behavior: smooth;
   font-size: 62.5%;
 }
 
 body {
+  scroll-behavior: smooth;
+  height: 100vh;
   font-family: 'Roboto', sans-serif;
-  font-size: 1.4rem;
+  /* font-size: 1.4rem; */
 }
 
 a:link {
@@ -43,21 +92,24 @@ a:visited {
 }
 
 .btn {
+  font-size: 1.6rem;
+  font-weight: 500;
   border-radius: 50px;
-  border: 2px solid var(--buton-background);
-  background: var(--buton-background);
+  border: 2px solid var(--color-brand-implemented-100);
+  background: var(--color-brand-implemented-100);
   color: var(--color-white);
-  letter-spacing: 0.1rem;
+  letter-spacing: 0.5px;
+  cursor: pointer;
 }
 
 .btn-md {
-  padding: 1.2rem;
+  padding: 1.2rem 2rem;
   min-width: 15rem;
 }
 
 .btn-lg {
   padding: 2rem 2.4rem;
   font-weight: 700;
-  letter-spacing: 0.5rem;
+  letter-spacing: 0.2px;
   font-size: 2rem;
 }
