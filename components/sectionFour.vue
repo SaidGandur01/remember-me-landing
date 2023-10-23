@@ -129,7 +129,7 @@
   height: 100%;
   position: absolute;
   transform: translateY(27%);
-  background: url("images/section-four/background.png") no-repeat;
+  background: url("~/public/images/section-four/background.png") no-repeat;
   background-size: contain;
 }
 </style>
