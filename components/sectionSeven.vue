@@ -1,7 +1,7 @@
 <template>
   <section class="section-seven">
     <div class="image-container">
-      <img src="~/assets/img/section-7/background.png" alt="background-image">
+      <img src="~/public/images/section-seven/background.png" alt="background-image">
     </div>
   </section>
 </template>

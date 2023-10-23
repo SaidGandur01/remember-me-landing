@@ -16,7 +16,7 @@
           mostrarles una nueva forma de aportar a la sociedad
         </p>
       </div>
-      <button class="btn btn-md">
+      <button class="btn btn-lg">
         Quiero Participar
       </button>
     </div>
@@ -57,9 +57,9 @@ import imgWrapper from '~/public/images/section-one/grandma.png'
     display: grid;
     place-content: center;
     gap: 5rem;
-    top: 50%;
+    top: 30%;
     left: 20%;
-    transform: translate(-20%, -50%);
+    transform: translate(-20%, -30%);
     color: var(--color-brand-white-100);
     .header {
       display: flex;
@@ -70,7 +70,7 @@ import imgWrapper from '~/public/images/section-one/grandma.png'
 
     h1 {
       color: var(--color-brand-white-200);
-      font-size: 5rem;
+      font-size: 7rem;
       font-weight: 800;
       line-height: 110%;
       letter-spacing: 1px;
@@ -79,14 +79,18 @@ import imgWrapper from '~/public/images/section-one/grandma.png'
     p {
       color: var(--color-brand-white-300);
       margin-bottom: 5rem;
-      font-size: 18px;
+      font-size: 2rem;
       font-weight: 400;
-      line-height: 160%;
+      line-height: 4rem;
       letter-spacing: 0.1px;
     }
 
     .btn {
-      width: max-content;
+      text-transform: capitalize;
+      letter-spacing: 1px;
+      font-size: 2rem;
+      min-width: max-content;
+      width: 30%;
     }
   }
 }

@@ -113,7 +113,7 @@
       }
 
       span {
-        color: var(--buton-background);
+        color: var(--color-brand-implemented-700);
         font-size: 1.6rem;
         font-weight: 500;
         line-height: 24px;

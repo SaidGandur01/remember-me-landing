@@ -8,19 +8,19 @@
       <span>Privacy</span>
       <span>Contact</span>
       <div class="image-container first-element">
-        <img src="~/assets/img/footer/youtube.png" alt="youtube">
+        <img src="~/public/images/footer/youtube.png" alt="youtube">
       </div>
       <div class="image-container">
-        <img src="~/assets/img/footer/facebook.png" alt="facebook">
+        <img src="~/public/images/footer/facebook.png" alt="facebook">
       </div>
       <div class="image-container">
-        <img src="~/assets/img/footer/twitter.png" alt="twitter">
+        <img src="~/public/images/footer/twitter.png" alt="twitter">
       </div>
       <div class="image-container">
-        <img src="~/assets/img/footer/instagram.png" alt="instagram">
+        <img src="~/public/images/footer/instagram.png" alt="instagram">
       </div>
       <div class="image-container">
-        <img src="~/assets/img/footer/linkedin.png" alt="linkedin">
+        <img src="~/public/images/footer/linkedin.png" alt="linkedin">
       </div>
     </div>
   </footer>
