@@ -18,7 +18,7 @@ const renderPage = ref<boolean>(false)
 const renderInformation = () => {
   setTimeout(() => {
     renderPage.value = true
-  }, 2500)
+  }, 2000)
 }
 
 onMounted(() => {
