@@ -1,8 +1,8 @@
 <template>
-  <nav class="navbar">
+  <nav v-click-outside="onHandleClickOutside" class="navbar">
     <div class="navbar-wrapper">
       <div class="navbar-logo">
-        <img src="/images/logo.svg" alt="logo" />
+        <img src="/images/logo.svg" alt="logo">
       </div>
       <div class="nav-list">
         <a class="nav-link">El Proyecto</a>
@@ -11,11 +11,13 @@
       </div>
       <span class="title"> Remember me </span>
     </div>
-    <button class="btn btn-md">Quiero Participar</button>
-    <button @click="toggleMenu" :class="{ 'none menuButton' : showMenu, 'menuButton': !showMenu}">
+    <button class="btn btn-md">
+      Quiero Participar
+    </button>
+    <button :class="{ 'none menuButton' : showMenu, 'menuButton': !showMenu}" @click="toggleMenu">
       <CoreIconHamburger />
     </button>
-    <button @click="toggleMenu" :class="{ 'none menuButton' : !showMenu, 'menuButton': showMenu}">
+    <button :class="{ 'none menuButton' : !showMenu, 'menuButton': showMenu}" @click="toggleMenu">
       <CoreIconClose />
     </button>
     <div v-if="showMenu" class="burger-wrapper">
@@ -27,6 +29,10 @@
 const showMenu = ref<boolean>(false)
 const toggleMenu = function () {
   showMenu.value = !showMenu.value
+}
+
+const onHandleClickOutside = (): void => {
+  showMenu.value = false
 }
 </script>
 <style lang="scss" scoped>
