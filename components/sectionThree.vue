@@ -1,13 +1,14 @@
 <template>
   <section class="section-three">
     <div class="image-container">
-      <img src="~/public/images/section-three/item-one.png" alt="man reading">
+      <img src="~/public/images/section-three/item-one.png" alt="man reading" />
     </div>
     <div class="information-container">
       <h3>Historias</h3>
       <h2>Permitir a gente (mayor?) contar sus historias</h2>
       <p>
-        Permitir a las personas transmitir sus historias de vida y vivencias a nuevas generaciones y que estas historias no se pierdan.
+        Permitir a las personas transmitir sus historias de vida y vivencias a
+        nuevas generaciones y que estas historias no se pierdan.
       </p>
       <button class="btn btn-lg">
         Quiero participar!
@@ -15,8 +16,7 @@
     </div>
   </section>
 </template>
-<script lang="ts" setup>
-</script>
+<script lang="ts" setup></script>
 <style lang="scss" scoped>
 .section-three {
   display: flex;
@@ -68,7 +68,27 @@
       width: 60%;
       box-shadow:
         0px 0px 15px 0px rgba(0, 0, 0, 0.07),
-        0px 25px 50px -12px rgba(0, 0, 0, 0.25);    }
+        0px 25px 50px -12px rgba(0, 0, 0, 0.25);
+    }
+  }
+  @media (max-width: 768px) {
+    flex-direction: column;
+    .image-container,
+    .information-container {
+      width: auto;
+    }
+    .information-container {
+      align-items: center;
+      padding: 7rem 2rem;
+      gap: 3rem;
+
+      h2, p {
+        text-align: center;
+      }
+      h2 {
+        font-size: 3.6rem;
+      }
+    }
   }
 }
 </style>

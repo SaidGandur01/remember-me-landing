@@ -95,7 +95,7 @@
     .information {
       flex-direction: column;
       margin: 0;
-      gap:2rem;
+      gap: 2rem;
     }
   }
 }
