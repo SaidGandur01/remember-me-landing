@@ -78,7 +78,6 @@ import imgWrapper from '~/public/images/section-one/grandma.png'
 
     p {
       color: var(--color-brand-white-300);
-      margin-bottom: 5rem;
       font-size: 2rem;
       font-weight: 400;
       line-height: 4rem;
@@ -93,6 +92,28 @@ import imgWrapper from '~/public/images/section-one/grandma.png'
       width: 30%;
     }
   }
+  @media (max-width: 768px) {
+    min-height: calc(100vh - 75px);
+    .wrapper{
+      width: auto;
+      top: 23%;
+      left: 23%;
+      .header {
+        margin-bottom: 0;
+      }
+      h1 {
+        font-size: 5rem;
+        text-align: center;
+      }
+      p {
+        text-align: center;
+        line-height: 3rem;
+      }
+      .btn {
+        justify-self: center;
+      }
+    }
+  }
 }
 @keyframes scale {
   0% {
@@ -103,7 +124,4 @@ import imgWrapper from '~/public/images/section-one/grandma.png'
   }
 }
 
-@media (max-width: 768px) {
-
-}
 </style>
