@@ -30,7 +30,6 @@ const showMenu = ref<boolean>(false)
 const toggleMenu = function () {
   showMenu.value = !showMenu.value
 }
-
 const onHandleClickOutside = (): void => {
   showMenu.value = false
 }
@@ -102,14 +101,14 @@ const onHandleClickOutside = (): void => {
     display: none;
     width: 100%;
     background: #fff;
-    position: fixed;
-    top: 75px;
+    position: absolute;
+    top: 74px;
     right: 0;
     box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
     z-index: 2;
   }
 
-  @media (max-width: 576px) {
+  @media (max-width: 768px) {
     padding: 1rem;
     justify-content: space-between;
     height: 75px;

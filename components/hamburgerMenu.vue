@@ -15,10 +15,9 @@
 </template>
 <style lang="scss" scoped>
 .burger-container {
-    padding-bottom: 2rem;
+    padding: 0 3rem 2rem;
   .menu-list {
     list-style: none;
-    margin: 0 3rem;
   }
 
   .menu-item {
