@@ -32,8 +32,6 @@ import imgWrapper from '~/public/images/section-one/grandma.png'
   position: relative;
 
   .img-wrapper {
-    width: 100%;
-    height: 100%;
     position: absolute;
     width: 100%;
     height: 100%;
@@ -96,8 +94,9 @@ import imgWrapper from '~/public/images/section-one/grandma.png'
     min-height: calc(100vh - 75px);
     .wrapper{
       width: auto;
-      top: 23%;
       left: 23%;
+      place-content: space-evenly;
+      gap: 0;
       .header {
         margin-bottom: 0;
       }
