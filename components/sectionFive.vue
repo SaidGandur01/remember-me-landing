@@ -14,10 +14,10 @@
 </template>
 <style lang="scss" scoped>
 .section-five {
-  margin-top: 5rem;
-  padding: 0 8rem 10rem;
+  padding: 10rem 8rem;
   display: flex;
   justify-content: space-between;
+  gap: 5rem;
 
   .image-container,
   .information {
@@ -26,7 +26,7 @@
 
   .image-container {
     img {
-      width: 80%;
+      width: 100%;
       height: 100%;
     }
   }
@@ -59,6 +59,18 @@
       font-size: 1.8rem;
       font-weight: 400;
       line-height: 160%; /* 28.8px */
+    }
+  }
+  @media (max-width: 768px) {
+    padding: 7rem 4rem;
+    flex-direction: column-reverse;
+    align-items: center;
+    .information {
+      text-align: center;
+    }
+    .image-container,
+    .information {
+      width: 100%;
     }
   }
 }
