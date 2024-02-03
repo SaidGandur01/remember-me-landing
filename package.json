@@ -23,6 +23,7 @@
     "typescript": "^5.1.6"
   },
   "dependencies": {
-    "click-outside-vue3": "^4.0.1"
+    "click-outside-vue3": "^4.0.1",
+    "swiper": "^11.0.5"
   }
 }
