@@ -29,7 +29,11 @@
 <style lang="scss" scoped>
 .section-six {
   display: flex;
-  padding: 5rem 7rem;
+  padding: 7rem;
+
+  img {
+    border-radius: 10px;
+  }
 
   .information {
     width: 45%;
@@ -70,11 +74,11 @@
       height: 40%;
 
       img:first-child {
-        width: 70%;
+        width: 60%;
       }
 
       img:last-child {
-        flex-grow: 1;
+        width: 40%;
       }
     }
 
@@ -83,6 +87,21 @@
 
       img {
         width: 100%;
+      }
+    }
+  }
+  @media (max-width: 768px) {
+    flex-direction: column;
+    padding: 7rem 4rem;
+    gap: 3rem;
+
+    .information {
+      width: 100%;
+      text-align: center;
+      padding: 0;
+
+      button {
+        align-self: center;
       }
     }
   }

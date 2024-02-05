@@ -41,7 +41,7 @@
 
   .image {
     img {
-      width: 100%;
+      width: 100px;
       object-fit: cover;
     }
   }
@@ -62,7 +62,6 @@
 
     .image {
       margin: 0 auto;
-      width: 7vw;
     }
   }
 
@@ -88,6 +87,16 @@
     font-size: 1.6rem;
     font-weight: 400;
     line-height: 140%;
+  }
+  @media (max-width: 768px) {
+    h1 {
+      display: none;
+    }
+    .information {
+      flex-direction: column;
+      margin: 0;
+      gap: 2rem;
+    }
   }
 }
 </style>
