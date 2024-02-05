@@ -14,7 +14,7 @@
 </template>
 <style lang="scss" scoped>
 .section-five {
-  padding: 10rem 8rem;
+  padding: 7rem;
   display: flex;
   justify-content: space-between;
   gap: 5rem;

@@ -94,7 +94,7 @@ const modules = [Pagination, Autoplay]
 </script>
 <style lang="scss" scoped>
 .section-four {
-  padding: 10rem 0;
+  padding: 7rem 0;
   min-height: 145vh;
   position: relative;
   overflow: hidden;

@@ -29,7 +29,7 @@
 <style lang="scss" scoped>
 .section-six {
   display: flex;
-  padding: 10rem 7rem;
+  padding: 7rem;
 
   img {
     border-radius: 10px;
