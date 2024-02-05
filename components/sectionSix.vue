@@ -98,6 +98,8 @@
     .information {
       width: 100%;
       text-align: center;
+      padding: 0;
+
       button {
         align-self: center;
       }
