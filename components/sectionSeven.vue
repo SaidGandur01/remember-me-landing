@@ -10,7 +10,9 @@
       <p>
         Necesitamos tu apoyo para que este proyecto cobre vida!!
       </p>
-      <button class="btn btn-lg">Yo me sumo!</button>
+      <button class="btn btn-lg">
+        Yo me sumo!
+      </button>
     </div>
   </section>
 </template>
@@ -20,7 +22,7 @@
 .section-seven {
   position: relative;
   background-color: var(--color-brand-implemented-500);
-  
+
   .section-seven-wrapper {
     padding: 5rem;
     display: flex;
@@ -76,7 +78,7 @@
     .section-seven-wrapper {
       padding: 3rem 1rem;
       gap: 1rem;
-    } 
+    }
     h1{
       font-size: 3.6rem;
     }
@@ -104,7 +106,7 @@
   position: absolute;
   top: 0;
   right: 0;
-  background: url("~/public/images/section-seven/iphones.png") no-repeat;
+  background: url("~/public/images/section-seven/Iphones.png") no-repeat;
   background-size: contain;
 }
 </style>
