@@ -31,7 +31,7 @@
 </template>
 <style lang="scss" scoped>
 footer {
-  padding: 5rem;
+  padding: 4rem;
   height: auto;
   display: flex;
   justify-content: space-between;
