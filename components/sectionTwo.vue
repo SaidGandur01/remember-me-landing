@@ -1,102 +1,148 @@
 <template>
   <section class="section-two">
-    <h1>Nuestro objetivo y proyecto</h1>
-    <div class="information">
-      <div class="item">
-        <div class="image">
-          <img src="~/public/images/section-two/item-one.svg" alt="clip image">
+    <div ref="carousel" class="carousel-container">
+      <div ref="track" class="carousel-track">
+        <div v-for="(item, index) in duplicatedItems" :key="index" class="carousel-slide">
+          <div class="item">
+            <div class="image">
+              <img :src="item.image" :alt="item.title">
+            </div>
+            <h3>{{ item.title }}</h3>
+            <p>{{ item.description }}</p>
+          </div>
         </div>
-        <h3>Ayudar a recordar</h3>
-        <p>Lorem ipson</p>
-      </div>
-      <div class="item">
-        <div class="image">
-          <img src="~/public/images/section-two/item-two.svg" alt="clip image">
-        </div>
-        <h3>Aprender</h3>
-        <p>Lorem ipson</p>
-      </div>
-      <div class="item">
-        <div class="image">
-          <img src="~/public/images/section-two/item-three.svg" alt="clip image">
-        </div>
-        <h3>Transmitir historias de vida</h3>
-        <p>Lorem ipson</p>
-      </div>
-      <div class="item">
-        <div class="image">
-          <img src="~/public/images/section-two/item-four.svg" alt="clip image">
-        </div>
-        <h3>Conectar generaciones</h3>
-        <p>Lorem ipson</p>
       </div>
     </div>
   </section>
 </template>
+
 <script lang="ts" setup>
+const items = [
+  {
+    image: '/images/section-two/item-one.svg',
+    title: 'Ayudar a recordar',
+    description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.'
+  },
+  {
+    image: '/images/section-two/item-two.svg',
+    title: 'Aprender',
+    description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.'
+  },
+  {
+    image: '/images/section-two/item-three.svg',
+    title: 'Transmitir historias de vida',
+    description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.'
+  },
+  {
+    image: '/images/section-two/item-four.svg',
+    title: 'Conectar generaciones',
+    description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.'
+  }
+]
+
+const duplicatedItems = [...items, ...items]
+
+const carousel = ref<HTMLElement | null>(null)
+const track = ref<HTMLElement | null>(null)
+
+onMounted(() => {
+  const trackElement = track.value as HTMLElement
+
+  const trackWidth = trackElement.scrollWidth
+
+  let startPosition = 0
+
+  const animate = () => {
+    startPosition -= 0.4
+    if (startPosition <= -trackWidth / 2) {
+      startPosition = 0
+    }
+    trackElement.style.transform = `translateX(${startPosition}px)`
+    requestAnimationFrame(animate)
+  }
+
+  setTimeout(() => {
+    animate()
+  }, 800)
+})
 </script>
+
 <style lang="scss" scoped>
 .section-two {
   padding: 7rem 0;
+  background-color: #f9f9f9;
 
-  .image {
-    img {
-      width: 100px;
-      object-fit: cover;
-    }
+  h1 {
+    text-align: center;
+    margin-bottom: 2rem;
   }
 
-  .information {
+  .carousel-container {
+    overflow: hidden;
+    width: 100%;
+    position: relative;
+    animation: fadeInUp 1s forwards ease-in-out;
+  }
+
+  .carousel-track {
     display: flex;
-    justify-content: space-evenly;
-    margin: 7rem 0 3rem;
-    padding: 0 7rem;
+    width: max-content;
+  }
+
+  .carousel-slide {
+    flex: 0 0 auto;
+    width: 13%;
   }
 
   .item {
     display: flex;
     flex-direction: column;
-    gap: 1rem;
-    flex-grow: 1;
-    flex-basis: 0;
-
-    .image {
-      margin: 0 auto;
-    }
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    padding: 2rem;
+    margin: 0 5rem;
   }
 
-  h1 {
-    color: var(--color-brand-implemented-200);
-    text-align: center;
-    font-size: 6rem;
-    font-weight: 800;
-    line-height: 110%;
+  .image {
+    img {
+      width: 100px;
+      height: auto;
+      margin-bottom: 1rem;
+    }
   }
 
   h3 {
-    color: var(--color-text);
-    text-align: center;
-    font-size: 2.4rem;
-    font-weight: 700;
-    line-height: 110%;
+    font-size: 1.8rem;
+    margin: 0.5rem 0;
   }
 
   p {
-    color: var(--color-text);
-    text-align: center;
-    font-size: 1.6rem;
-    font-weight: 400;
-    line-height: 140%;
+    font-size: 1.4rem;
   }
-  @media (max-width: 768px) {
-    h1 {
-      display: none;
-    }
-    .information {
-      flex-direction: column;
-      margin: 0;
-      gap: 2rem;
-    }
+}
+@media (max-width: 768px) {
+  .carousel-slide {
+    width: 10% !important;
+  }
+  img {
+    width: 6rem !important;
+  }
+  .item {
+    margin: 0 2.5rem !important;
+  }
+}
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
   }
 }
 </style>

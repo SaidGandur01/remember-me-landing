@@ -1,126 +1,140 @@
 <template>
   <main class="section-one">
-    <div class="img-wrapper">
-      <img :src="imgWrapper" alt="grandma-image">
-    </div>
-    <div class="wrapper">
-      <div class="header">
-        <h1>
-          Construyendo puentes
-          generacionales
-        </h1>
-        <p>
-          Nuestro proyecto pretende abrir espacios de dialogo para las personas
-          mayores que se sienten renegadas por al sociedad y permitirles seguir
-          aportando, quitarles cualquier sensación que tengan negativa y
-          mostrarles una nueva forma de aportar a la sociedad
-        </p>
+    <div class="first-column">
+      <h1>
+        Construyendo <br> puentes <br>
+        generacionales
+      </h1>
+      <p>
+        Nuestro proyecto pretende abrir espacios de dialogo para las personas
+        mayores.
+      </p>
+      <div class="button-wrapper">
+        <button class="btn btn-md">
+          Quiero Participar
+        </button>
+        <button class="btn btn-md outlined">
+          ¿Qué hacemos?
+        </button>
       </div>
-      <button class="btn btn-lg">
-        Quiero Participar
-      </button>
+    </div>
+    <div class="second-column">
+      <img :src="bgImage" alt="background-image">
     </div>
   </main>
 </template>
 <script lang="ts" setup>
-import imgWrapper from '~/public/images/section-one/grandma.png'
+import bgImage from '~/public/images/section-one/background.jpeg'
 </script>
 <style lang="scss" scoped>
 .section-one {
-  width: 100%;
-  min-height: calc(100vh - 100px);
-  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #F1FFE5;
 
-  .img-wrapper {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    top: 0;
-    left: 0;
-    z-index: -1001;
-    overflow: hidden;
-  }
-
-  .img-wrapper img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    animation: scale 15s;
-  }
-
-  .wrapper {
-    position: absolute;
+  .first-column {
     width: 50%;
-    height: 100%;
-    display: grid;
-    place-content: center;
-    gap: 5rem;
-    top: 30%;
-    left: 20%;
-    transform: translate(-20%, -30%);
-    color: var(--color-brand-white-100);
-    .header {
-      display: flex;
-      flex-direction: column;
-      gap: 5rem;
-      margin-bottom: 5rem;
-    }
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 2% 5%;
+    gap: 2rem;
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeInUp 1s forwards ease-in-out;
 
     h1 {
-      color: var(--color-brand-white-200);
-      font-size: 7rem;
+      font-size: 5.5rem;
       font-weight: 800;
       line-height: 110%;
       letter-spacing: 1px;
+      font-family: 'Roboto', sans-serif;
     }
-
     p {
-      color: var(--color-brand-white-300);
+      color: #343434;
       font-size: 2rem;
       font-weight: 400;
       line-height: 4rem;
       letter-spacing: 0.1px;
+      font-family: 'Roboto', sans-serif;
+      animation: fadeInUp 1.6s forwards ease-in-out;
     }
 
-    .btn {
-      text-transform: capitalize;
-      letter-spacing: 1px;
-      font-size: 2rem;
-      min-width: max-content;
-      width: 30%;
+    .button-wrapper {
+      display: flex;
+      align-items: center;
+      gap: 2rem;
+      animation: fadeInUp 2.2s forwards ease-in-out;
+
+      .outlined {
+        background-color: transparent;
+        color: var(--color-brand-implemented-500);
+      }
+
+      .btn {
+        transition: transform 0.3s ease-in-out;
+      }
+
+      .btn:hover {
+        transform: translateY(-5px);
+      }
     }
   }
-  @media (max-width: 768px) {
-    min-height: calc(100vh - 75px);
-    .wrapper{
-      width: auto;
-      left: 23%;
-      place-content: space-evenly;
-      gap: 0;
-      .header {
-        margin-bottom: 0;
-      }
+  .second-column {
+    width: 50%;
+    overflow: hidden;
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      animation: scaleRotate 15s infinite alternate;
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .section-one {
+    flex-direction: column;
+
+    .first-column,
+    .second-column {
+      width: 100%;
+    }
+
+    .first-column {
+      padding: 5%;
+
       h1 {
-        font-size: 5rem;
-        text-align: center;
+        font-size: 4rem;
+        letter-spacing: 1px;
       }
-      p {
-        text-align: center;
-        line-height: 3rem;
-      }
-      .btn {
-        justify-self: center;
+
+      .button-wrapper {
+        margin: 1rem 0;
       }
     }
   }
 }
-@keyframes scale {
+
+@keyframes fadeInUp {
   0% {
-    transform: scale(1.3);
+    opacity: 0;
+    transform: translateY(20px);
   }
   100% {
-    transform: scale(1);
+    opacity: 1;
+    transform: translateY(0);
   }
 }
 
+@keyframes scaleRotate {
+  0% {
+    transform: scale(1.3) rotate(0deg);
+  }
+  100% {
+    transform: scale(1) rotate(2deg);
+  }
+}
 </style>

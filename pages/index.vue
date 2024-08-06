@@ -2,7 +2,7 @@
   <!-- <Spinner /> -->
   <div v-if="renderPage" id="main">
     <Header />
-    <SectionOneTest />
+    <SectionOne />
     <SectionTwo />
     <SectionThree />
     <SectionFour />
