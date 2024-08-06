@@ -2,7 +2,7 @@
   <main class="section-one">
     <div class="first-column">
       <h1>
-        Construyendo <br> puentess <br>
+        Construyendo <br> puentes <br>
         generacionales
       </h1>
       <p>
