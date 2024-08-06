@@ -18,12 +18,15 @@ export default defineNuxtConfig({
       noscript: []
     }
   },
+
   css: ['@/assets/css/base.css'],
+
   modules: [
     '@nuxtjs/google-fonts',
     '@nuxt/image',
     '@nuxtjs/eslint-module'
   ],
+
   googleFonts: {
     families: {
       Roboto: {
@@ -34,5 +37,9 @@ export default defineNuxtConfig({
       }
     }
   },
-  devtools: { enabled: false }
+  plugins: [
+    { src: '~/plugins/intersection-observer.client.ts', mode: 'client' }
+  ],
+  devtools: { enabled: false },
+  compatibilityDate: '2024-08-05'
 })

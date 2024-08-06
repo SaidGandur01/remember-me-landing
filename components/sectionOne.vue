@@ -117,24 +117,4 @@ import bgImage from '~/public/images/section-one/background.jpeg'
     }
   }
 }
-
-@keyframes fadeInUp {
-  0% {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-  100% {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-@keyframes scaleRotate {
-  0% {
-    transform: scale(1.3) rotate(0deg);
-  }
-  100% {
-    transform: scale(1) rotate(2deg);
-  }
-}
 </style>

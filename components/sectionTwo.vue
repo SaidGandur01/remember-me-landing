@@ -1,18 +1,24 @@
 <template>
   <section class="section-two">
-    <div ref="carousel" class="carousel-container">
-      <div ref="track" class="carousel-track">
-        <div v-for="(item, index) in duplicatedItems" :key="index" class="carousel-slide">
-          <div class="item">
-            <div class="image">
-              <img :src="item.image" :alt="item.title">
+    <motion-section
+      ref="target"
+      :initial="{ opacity: 0, y: 20 }"
+      :enter="{ opacity: 1, y: 0 }"
+    >
+      <div ref="carousel" class="carousel-container">
+        <div ref="track" class="carousel-track">
+          <div v-for="(item, index) in duplicatedItems" :key="index" class="carousel-slide">
+            <div class="item">
+              <div class="image">
+                <img :src="item.image" :alt="item.title">
+              </div>
+              <h3>{{ item.title }}</h3>
+              <p>{{ item.description }}</p>
             </div>
-            <h3>{{ item.title }}</h3>
-            <p>{{ item.description }}</p>
           </div>
         </div>
       </div>
-    </div>
+    </motion-section>
   </section>
 </template>
 
@@ -133,16 +139,6 @@ onMounted(() => {
   }
   .item {
     margin: 0 2.5rem !important;
-  }
-}
-@keyframes fadeInUp {
-  0% {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-  100% {
-    opacity: 1;
-    transform: translateY(0);
   }
 }
 </style>

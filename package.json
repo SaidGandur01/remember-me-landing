@@ -23,7 +23,9 @@
     "typescript": "^5.1.6"
   },
   "dependencies": {
+    "@vueuse/motion": "^2.2.3",
     "click-outside-vue3": "^4.0.1",
+    "intersection-observer": "^0.12.2",
     "swiper": "^11.0.5"
   }
 }
