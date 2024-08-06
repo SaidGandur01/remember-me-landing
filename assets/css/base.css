@@ -102,8 +102,8 @@ a:visited {
   font-size: 1.6rem;
   font-weight: 500;
   border-radius: 50px;
-  border: 2px solid var(--color-brand-implemented-100);
-  background: var(--color-brand-implemented-100);
+  border: 2px solid var(--color-brand-green-500);
+  background: var(--color-brand-green-500);
   color: var(--color-white);
   letter-spacing: 0.5px;
   cursor: pointer;

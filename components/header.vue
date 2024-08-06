@@ -20,9 +20,11 @@
     <button :class="{ 'none menuButton' : !showMenu, 'menuButton': showMenu}" @click="toggleMenu">
       <CoreIconClose />
     </button>
-    <div v-if="showMenu" class="burger-wrapper">
-      <HamburgerMenu />
-    </div>
+    <transition name="fade">
+      <div v-show="showMenu" class="burger-wrapper">
+        <HamburgerMenu />
+      </div>
+    </transition>
   </nav>
 </template>
 <script lang="ts" setup>
@@ -55,25 +57,37 @@ const onHandleClickOutside = (): void => {
   .nav-list {
     display: flex;
     gap: 3rem;
-    margin-left: 3rem;
+    margin-left: auto;
+    margin-right: 5rem;
+    text-transform: uppercase;
   }
 
   .nav-link {
     cursor: pointer;
-    color: var(--color-text);
+    color: var(--color-brand-implemented-500);
     font-size: 1.6rem;
     font-style: normal;
     font-weight: 400;
     line-height: 2.4rem;
     letter-spacing: 0.1rem;
+    transition: all 0.2s ease;
+
+    &:hover {
+      transform: translateY(-5px);
+      border-bottom: 1px solid var(--color-brand-implemented-500);
+    }
   }
   .navbar-wrapper {
     display: flex;
     align-items: center;
+    flex: 1;
   }
 
   button {
     margin-left: auto;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: 400;
   }
   .none {
     display: none !important;
@@ -90,11 +104,13 @@ const onHandleClickOutside = (): void => {
     display: none;
     color: #758c82;
     font-family: "Sansita Swashed";
-    font-size: 22px;
+    letter-spacing: 1px;
+    font-size: 2.5rem;
     font-style: normal;
     font-weight: 400;
     line-height: 110%;
     margin-left: 1rem;
+    margin: 0 auto;
   }
 
   .burger-wrapper {
@@ -112,6 +128,8 @@ const onHandleClickOutside = (): void => {
     padding: 1rem;
     justify-content: space-between;
     height: 75px;
+    background-color: #F7FFF0 !important;
+
     .btn {
       display: none;
     }
@@ -122,7 +140,8 @@ const onHandleClickOutside = (): void => {
       width: 70%;
     }
     &-logo {
-      width: 40px;
+      margin-left: 0.5rem;
+      width: 50px;
     }
     .nav-list {
       display: none;
@@ -134,5 +153,14 @@ const onHandleClickOutside = (): void => {
       display: block;
     }
   }
+}
+.fade-enter-active,
+.fade-leave-active {
+  transition: opacity 0.4s;
+}
+
+.fade-enter,
+.fade-leave-to {
+  opacity: 0;
 }
 </style>

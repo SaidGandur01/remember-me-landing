@@ -16,6 +16,7 @@
 <style lang="scss" scoped>
 .burger-container {
     padding: 0 3rem 2rem;
+    background-color: #F7FFF0 !important;
   .menu-list {
     list-style: none;
   }
@@ -26,12 +27,12 @@
     a {
       text-decoration: none;
       line-height: 1.5rem;
-      font-size: 1rem;
+      font-size: 1.5rem;
       font-weight: 500;
-      background-color: #fff;
-      padding: 1.5rem;
+      padding: 3rem;
       display: block;
-      color: var(--color-text);
+      color: var(--color-brand-implemented-500);
+      text-transform: uppercase;
 
       &:hover {
         background-color: darken(#fff,5%);
