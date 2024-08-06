@@ -1,5 +1,5 @@
 <template>
-  <Spinner />
+  <!-- <Spinner /> -->
   <div v-if="renderPage" id="main">
     <Header />
     <SectionOne />
@@ -13,11 +13,11 @@
   </div>
 </template>
 <script lang="ts" setup>
-const renderPage = ref<boolean>(false)
+const renderPage = ref<boolean>(true)
 
 const renderInformation = () => {
   setTimeout(() => {
-    renderPage.value = true
+    // renderPage.value = true
   }, 2000)
 }
 
