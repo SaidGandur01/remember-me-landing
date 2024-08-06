@@ -1,5 +1,6 @@
 <template>
   <!-- <Spinner /> -->
+  <SpeedInsights />
   <div v-if="renderPage" id="main">
     <Header />
     <SectionOne />
@@ -13,6 +14,7 @@
   </div>
 </template>
 <script lang="ts" setup>
+import { SpeedInsights } from '@vercel/speed-insights/nuxt'
 const renderPage = ref<boolean>(true)
 
 const renderInformation = () => {
