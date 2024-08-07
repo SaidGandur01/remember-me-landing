@@ -73,7 +73,7 @@ const handleDonate = async () => {
   if (customAmount.value) {
     amount.value = parseInt(customAmount.value) * 100
   }
-
+  console.log(amount.value, secret)
   if (amount.value > 0 && secret) {
     hash.value = await generateHash(
       reference.value,
