@@ -25,10 +25,10 @@ export default async (event: H3Event) => {
     }
 
     const { transaction } = body.data
-    const { properties, checksum } = body.signature
+    const { checksum } = body.signature
     const { timestamp } = body
     console.log('SERVER VERCEL WEBHOOK BODY: ', body)
-    const concatenatedValues = properties.join('')
+    const concatenatedValues = `${transaction.id}${transaction.status}${transaction.amount_in_cents}`
     console.log('SERVER VERCEL WEBHOOK properties: ', concatenatedValues)
     const concatenatedString = `${concatenatedValues}${timestamp}${SECRET}`
     console.log('SERVER VERCEL WEBHOOK concatenatedString: ', concatenatedString)
