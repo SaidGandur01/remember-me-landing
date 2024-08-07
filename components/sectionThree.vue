@@ -1,7 +1,7 @@
 <template>
   <section ref="target" :class="{ 'in-view': inView }" class="section-three">
     <div class="image-container">
-      <img src="~/public/images/section-three/item-one.png" alt="man reading">
+      <img src="~/public/images/section-three/item-one.webp" alt="man reading">
     </div>
     <div class="information-container">
       <h3>Historias</h3>

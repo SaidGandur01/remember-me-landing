@@ -9,7 +9,7 @@
     <div class="second-column">
       <div class="card">
         <div class="card-image-wrapper">
-          <img src="~/public/images/section-four/card1.jpeg" alt="card1">
+          <img src="~/public/images/section-four/card1.webp" alt="card1">
         </div>
         <span class="card-name">Juan</span>
         <span class="card-message">“Me encanta la oportunidad de contar mi vida, los niños pueden
@@ -18,7 +18,7 @@
       </div>
       <div class="card">
         <div class="card-image-wrapper">
-          <img src="~/public/images/section-four/card2.jpeg" alt="card2">
+          <img src="~/public/images/section-four/card2.webp" alt="card2">
         </div>
         <span class="card-name">Beatriz</span>
         <span class="card-message">“Me encanta la oportunidad de contar mi vida, los niños pueden
@@ -27,7 +27,7 @@
       </div>
       <div class="card">
         <div class="card-image-wrapper">
-          <img src="~/public/images/section-four/card3.jpeg" alt="card3">
+          <img src="~/public/images/section-four/card3.webp" alt="card3">
         </div>
         <span class="card-name">Rosa</span>
         <span class="card-message">“Me encanta la oportunidad de contar mi vida, los niños pueden
@@ -57,7 +57,9 @@ const { target } = useIntersectionObserver(() => {
 })
 
 onMounted(() => {
-  cardImageWrappers.value = Array.from(document.querySelectorAll('.card-image-wrapper'))
+  cardImageWrappers.value = Array.from(
+    document.querySelectorAll('.card-image-wrapper')
+  )
   cardNames.value = Array.from(document.querySelectorAll('.card-name'))
   cardMessages.value = Array.from(document.querySelectorAll('.card-message'))
 })
@@ -71,7 +73,9 @@ onMounted(() => {
   gap: 10rem;
   opacity: 0;
   transform: translateY(20px);
-  transition: opacity 1s ease-out 0.3s, transform 1s ease-out 0.3s;
+  transition:
+    opacity 1s ease-out 0.3s,
+    transform 1s ease-out 0.3s;
 
   &.in-view {
     opacity: 1;
@@ -115,7 +119,9 @@ onMounted(() => {
         overflow: hidden;
         opacity: 0;
         transform: translateY(20px);
-        transition: opacity 1.5s ease-in-out, transform 1.5s ease-in-out;
+        transition:
+          opacity 1.5s ease-in-out,
+          transform 1.5s ease-in-out;
 
         &.in-view {
           opacity: 1;
@@ -124,11 +130,14 @@ onMounted(() => {
 
         img {
           width: 100%;
+          height: 100%;
           border-radius: 1rem;
           animation: scaleRotate 15s infinite alternate;
-          box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1),
-                        0 6px 20px rgba(0, 0, 0, 0.1),
-                        0 8px 40px rgba(0, 0, 0, 0.2);
+          box-shadow:
+            0 4px 8px rgba(0, 0, 0, 0.1),
+            0 6px 20px rgba(0, 0, 0, 0.1),
+            0 8px 40px rgba(0, 0, 0, 0.2);
+          object-fit: cover;
         }
       }
 
@@ -140,7 +149,9 @@ onMounted(() => {
         font-family: "Roboto", sans-serif;
         opacity: 0;
         transform: translateY(20px);
-        transition: opacity 3s ease-in-out, transform 3s ease-in-out;
+        transition:
+          opacity 3s ease-in-out,
+          transform 3s ease-in-out;
 
         &.in-view {
           opacity: 1;
@@ -155,7 +166,9 @@ onMounted(() => {
         line-height: 20px;
         opacity: 0;
         transform: translateY(20px);
-        transition: opacity 4s ease-in-out, transform 4s ease-in-out;
+        transition:
+          opacity 4s ease-in-out,
+          transform 4s ease-in-out;
 
         &.in-view {
           opacity: 1;
