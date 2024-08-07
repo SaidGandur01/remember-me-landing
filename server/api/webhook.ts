@@ -37,7 +37,7 @@ export default async (event: H3Event) => {
       .createHash('sha256')
       .update(concatenatedString)
       .digest('hex')
-      .toUpperCase()
+      .toLowerCase()
     console.log('SERVER VERCEL hash: ', hash)
     console.log('SERVER VERCEL checksum: ', checksum)
     // Verificar el checksum
