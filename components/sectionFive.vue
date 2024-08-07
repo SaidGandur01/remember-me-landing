@@ -95,7 +95,7 @@ const { target } = useIntersectionObserver(() => {
 @media (max-width: 768px) {
   .section-five {
     flex-direction: column;
-    padding: 0rem 3rem;
+    padding: 0rem 3rem 6rem;
     gap: 3rem;
 
     .first-column,

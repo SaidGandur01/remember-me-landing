@@ -56,7 +56,7 @@ const onHandleClickOutside = (): void => {
 
   .nav-list {
     display: flex;
-    gap: 3rem;
+    gap: 5rem;
     margin-left: auto;
     margin-right: 5rem;
     text-transform: uppercase;
@@ -73,7 +73,7 @@ const onHandleClickOutside = (): void => {
     transition: all 0.2s ease;
 
     &:hover {
-      transform: translateY(-5px);
+      transform: translateY(-5px) scale(1.1);
       border-bottom: 1px solid var(--color-brand-implemented-500);
     }
   }

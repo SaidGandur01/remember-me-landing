@@ -19,14 +19,14 @@ export default defineNuxtConfig({
     }
   },
 
-  css: ['@/assets/css/base.css'],
+  css: ['@/assets/css/base.css', '@fortawesome/fontawesome-svg-core/styles.css'],
 
   modules: [
     '@nuxtjs/google-fonts',
     '@nuxt/image',
     '@nuxtjs/eslint-module'
   ],
-
+  ssr: false,
   googleFonts: {
     families: {
       Roboto: {

@@ -9,7 +9,7 @@
     <SectionFour />
     <SectionFive />
     <SectionSix />
-    <SectionSeven />
+    <!-- <SectionSeven /> -->
     <Footer />
   </div>
 </template>
