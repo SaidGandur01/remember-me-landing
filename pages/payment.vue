@@ -16,6 +16,7 @@
 
 <script lang="ts" setup>
 const route = useRoute()
+const router = useRouter()
 const transactionId = ref('')
 const transactionStatus = ref('')
 const loading = ref(true)
@@ -34,6 +35,9 @@ const fetchTransactionStatus = async (id: string) => {
     error.value = err.message
   } finally {
     loading.value = false
+    setTimeout(() => {
+      router.push('/')
+    }, 5000)
   }
 }
 
