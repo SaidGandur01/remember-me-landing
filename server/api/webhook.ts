@@ -1,7 +1,6 @@
 import crypto from 'crypto'
 import { H3Event, sendError, createError, readBody } from 'h3'
-
-const SECRET = 'test_events_4iGakB0LB3FlkdIhygXNYP7nXn9xh6zN'
+import { useEnvConfig } from '~/composables/useEnvConfig'
 
 export default async (event: H3Event) => {
   if (event.req.method !== 'POST') {
@@ -13,6 +12,7 @@ export default async (event: H3Event) => {
 
   try {
     const body = await readBody(event)
+    const { secretEventsKey: SECRET } = useEnvConfig()
 
     if (
       !body ||

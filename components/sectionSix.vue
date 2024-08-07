@@ -29,9 +29,6 @@
         Donar
       </button>
     </div>
-    <p v-if="hash">
-      Hash: {{ hash }}
-    </p>
     <form v-if="hash">
       <component
         :is="'script'"
@@ -53,16 +50,16 @@ import cloudImage from '~/public/images/section-six/cloud.webp'
 import { generateHash } from '~/utils/generateHash'
 
 const inView = ref(false)
+const { publicKey, secretIntegrityKey: secret } = useEnvConfig()
+
 const { target } = useIntersectionObserver(() => {
   inView.value = true
 })
 
-const reference = ref(generateTransactionId())
-const amount = ref(0) // Initial amount set to 0
-const customAmount = ref('')
+const reference = ref<string>(generateTransactionId())
+const amount = ref<number>(0)
+const customAmount = ref<string>('')
 const currency = 'COP'
-const secret = 'test_integrity_lzIfpFT7BQZ16b0XHhFMzkNON4zO725d'
-const publicKey = 'pub_test_y8geTBjhP0hcwLrPccgIcL0JT1sg2gJZ'
 // const expirationTime = '2023-06-09T20:28:50.000Z'
 
 const hash = ref('')
@@ -77,7 +74,7 @@ const handleDonate = async () => {
     amount.value = parseInt(customAmount.value) * 100
   }
 
-  if (amount.value > 0) {
+  if (amount.value > 0 && secret) {
     hash.value = await generateHash(
       reference.value,
       amount.value,
