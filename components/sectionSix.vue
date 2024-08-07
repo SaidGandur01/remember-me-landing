@@ -10,14 +10,14 @@
       <span>Necesitamos de tu ayuda para que este proyecto cobre vida.</span>
     </div>
     <div class="donation">
-      <button class="donation-option" @click="selectAmount(5000)">
-        $50
+      <button class="donation-option" @click="selectAmount(500000)">
+        $5000
       </button>
-      <button class="donation-option" @click="selectAmount(10000)">
-        $100
+      <button class="donation-option" @click="selectAmount(1000000)">
+        $10000
       </button>
-      <button class="donation-option" @click="selectAmount(12000)">
-        $120
+      <button class="donation-option" @click="selectAmount(2000000)">
+        $20000
       </button>
       <input
         v-model="customAmount"
@@ -74,7 +74,7 @@ const selectAmount = (value: number) => {
 
 const handleDonate = async () => {
   if (customAmount.value) {
-    amount.value = parseInt(customAmount.value) * 100 // Convert to cents
+    amount.value = parseInt(customAmount.value) * 100
   }
 
   if (amount.value > 0) {
