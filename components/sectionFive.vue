@@ -1,76 +1,120 @@
 <template>
-  <section class="section-five">
-    <div class="image-container">
-      <img src="~/public/images/section-five/platform.png" alt="">
-    </div>
-    <div class="information">
-      <h2>plataforma</h2>
-      <h1>Una plataforma simple e intuitiva</h1>
+  <section ref="target" :class="{ 'in-view': inView }" class="section-five">
+    <div class="first-column">
+      <h1>
+        Seguimiento de <br>
+        alumnos
+      </h1>
       <p>
-        Podrás manejar las historias de las personas que escriben, asignar historias a alumnos y ver su estado, comunicarte con otros escritores.
+        Las historias serán categorizadas por contenido y edad y podrán ser
+        asignadas a grupos estudiantiles. Podrás seguir su estados y permitir a
+        los alumnos comunicarse.
       </p>
+    </div>
+    <div class="second-column">
+      <img :src="bgImage" alt="background-image">
     </div>
   </section>
 </template>
+<script lang="ts" setup>
+import bgImage from '~/public/images/section-five/bg1.webp'
+const inView = ref(false)
+
+const { target } = useIntersectionObserver(() => {
+  inView.value = true
+})
+</script>
 <style lang="scss" scoped>
 .section-five {
-  padding: 7rem;
+  padding: 7rem 5rem;
+  position: relative;
+  overflow: hidden;
   display: flex;
-  justify-content: space-between;
   gap: 5rem;
+  opacity: 0;
+  transform: translateY(20px);
+  transition:
+    opacity 1s ease-out 0.3s,
+    transform 1s ease-out 0.3s;
 
-  .image-container,
-  .information {
-    width: 50%;
+  &.in-view {
+    opacity: 1;
+    transform: translateY(0);
   }
 
-  .image-container {
+  .first-column {
+    width: 40%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 0% 5%;
+    gap: 2rem;
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeInUp 1s forwards ease-in-out;
+
+    h1 {
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      font-size: 3.5rem;
+      color: var(--color-brand-implemented-500);
+      font-family: "Roboto", sans-serif;
+    }
+    p {
+      color: #1F3A52;
+      font-size: 1.8rem;
+      font-weight: 400;
+      line-height: 3rem;
+      letter-spacing: 1px;
+      font-family: "Roboto", sans-serif;
+      animation: fadeInUp 1.6s forwards ease-in-out;
+      width: 75%;
+    }
+  }
+  .second-column {
+    flex: 1;
+    max-height: 50vh;
+    overflow: hidden;
+    border-radius: 1rem;
+    animation: fadeInUp 1.6s forwards ease-in-out;
+    box-shadow:
+      0 4px 8px rgba(0, 0, 0, 0.1),
+      0 6px 20px rgba(0, 0, 0, 0.1),
+      0 8px 40px rgba(0, 0, 0, 0.2);
+
     img {
       width: 100%;
       height: 100%;
+      object-fit: cover;
+      border-radius: 1rem;
+      animation: scaleRotate 15s infinite alternate;
     }
   }
+}
 
-  .information {
-    gap: 3rem;
-    display: flex;
+@media (max-width: 768px) {
+  .section-five {
     flex-direction: column;
-    justify-content: center;
+    padding: 0rem 3rem;
+    gap: 3rem;
 
-    h2 {
-      color: var(--color-text-gray);
-      font-size: 2rem;
-      font-weight: 700;
-      line-height: 100%;
-      letter-spacing: 3px;
-      text-transform: uppercase;
-    }
-
-    h1 {
-      color: var(--color-brand-implemented-200);
-      font-size: 5.6rem;
-      font-style: normal;
-      font-weight: 800;
-      line-height: 110%;
-    }
-
-    p {
-      color: var(--color-text);
-      font-size: 1.8rem;
-      font-weight: 400;
-      line-height: 160%; /* 28.8px */
-    }
-  }
-  @media (max-width: 768px) {
-    padding: 7rem 4rem;
-    flex-direction: column-reverse;
-    align-items: center;
-    .information {
-      text-align: center;
-    }
-    .image-container,
-    .information {
+    .first-column,
+    .second-column {
       width: 100%;
+    }
+
+    .first-column {
+      padding: 5%;
+
+      h1 {
+        font-size: 3rem;
+        letter-spacing: 1px;
+        line-height: 4rem;
+      }
+
+      p {
+        width: 100%;
+      }
     }
   }
 }

@@ -113,6 +113,13 @@ import bgImage from '~/public/images/section-one/background.webp'
 
       .button-wrapper {
         margin: 1rem 0;
+        width: 100%;
+        justify-content: space-between;
+
+        button {
+          font-size: 1.5rem;
+          width: 100%;
+        }
       }
     }
   }
