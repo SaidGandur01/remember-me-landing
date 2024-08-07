@@ -22,16 +22,17 @@
     "typescript": "^5.1.6"
   },
   "dependencies": {
-    "@vercel/speed-insights": "^1.0.12",
-    "@vueuse/motion": "^2.2.3",
-    "click-outside-vue3": "^4.0.1",
-    "intersection-observer": "^0.12.2",
-    "nuxt": "^3.6.5",
-    "swiper": "^11.0.5",
     "@fortawesome/fontawesome-svg-core": "^6.4.2",
     "@fortawesome/free-brands-svg-icons": "^6.4.2",
     "@fortawesome/free-regular-svg-icons": "^6.4.2",
     "@fortawesome/free-solid-svg-icons": "^6.4.2",
-    "@fortawesome/vue-fontawesome": "^3.0.3"
+    "@fortawesome/vue-fontawesome": "^3.0.3",
+    "@vercel/speed-insights": "^1.0.12",
+    "@vueuse/motion": "^2.2.3",
+    "click-outside-vue3": "^4.0.1",
+    "crypto": "^1.0.1",
+    "intersection-observer": "^0.12.2",
+    "nuxt": "^3.6.5",
+    "swiper": "^11.0.5"
   }
 }

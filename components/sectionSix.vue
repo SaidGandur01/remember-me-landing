@@ -10,35 +10,87 @@
       <span>Necesitamos de tu ayuda para que este proyecto cobre vida.</span>
     </div>
     <div class="donation">
-      <button class="donation-option">
+      <button class="donation-option" @click="selectAmount(5000)">
         $50
       </button>
-      <button class="donation-option">
+      <button class="donation-option" @click="selectAmount(10000)">
         $100
       </button>
-      <button class="donation-option">
+      <button class="donation-option" @click="selectAmount(12000)">
         $120
       </button>
       <input
+        v-model="customAmount"
         type="text"
         class="donation-input"
         placeholder="$ Escribe un monto"
       >
-      <button class="donation-button">
+      <button class="donation-button" @click="handleDonate">
         Donar
       </button>
     </div>
+    <p v-if="hash">
+      Hash: {{ hash }}
+    </p>
+    <form v-if="hash">
+      <component
+        :is="'script'"
+        src="https://checkout.wompi.co/widget.js"
+        data-render="button"
+        :data-public-key="publicKey"
+        :data-currency="currency"
+        :data-amount-in-cents="amount"
+        :data-reference="reference"
+        :data-signature:integrity="hash"
+        redirect-url="https://www.rememberme.com.co/payment"
+      />
+    </form>
   </section>
 </template>
+
 <script lang="ts" setup>
 import cloudImage from '~/public/images/section-six/cloud.webp'
+import { generateHash } from '~/utils/generateHash'
 
 const inView = ref(false)
-
 const { target } = useIntersectionObserver(() => {
   inView.value = true
 })
+
+const reference = ref(generateTransactionId())
+const amount = ref(0) // Initial amount set to 0
+const customAmount = ref('')
+const currency = 'COP'
+const secret = 'test_integrity_lzIfpFT7BQZ16b0XHhFMzkNON4zO725d'
+const publicKey = 'pub_test_y8geTBjhP0hcwLrPccgIcL0JT1sg2gJZ'
+// const expirationTime = '2023-06-09T20:28:50.000Z'
+
+const hash = ref('')
+
+const selectAmount = (value: number) => {
+  amount.value = value
+  customAmount.value = ''
+}
+
+const handleDonate = async () => {
+  if (customAmount.value) {
+    amount.value = parseInt(customAmount.value) * 100 // Convert to cents
+  }
+
+  if (amount.value > 0) {
+    hash.value = await generateHash(
+      reference.value,
+      amount.value,
+      currency,
+      secret
+    )
+    console.log('Generated Hash:', hash.value)
+  } else {
+    console.error('Please enter a valid amount')
+  }
+}
 </script>
+
 <style lang="scss" scoped>
 .section-six {
   display: flex;
@@ -152,7 +204,7 @@ const { target } = useIntersectionObserver(() => {
         color 0.3s ease;
 
       &:hover {
-        background-color: darken($color: #1D956A, $amount: 10%);
+        background-color: darken($color: #1d956a, $amount: 10%);
       }
     }
   }

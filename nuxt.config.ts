@@ -2,6 +2,7 @@
 export default defineNuxtConfig({
   app: {
     head: {
+      charset: 'utf-8',
       meta: [
         {
           name: 'viewport',
@@ -12,7 +13,10 @@ export default defineNuxtConfig({
         }
       ],
       title: 'Remember me',
-      link: [],
+      link: [
+        { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
+        { rel: 'preconnect', href: process.env.SANDBOX_ENDPOINT || 'https://sandbox.wompi.co/v1/' }
+      ],
       style: [],
       script: [],
       noscript: []
@@ -26,7 +30,7 @@ export default defineNuxtConfig({
     '@nuxt/image',
     '@nuxtjs/eslint-module'
   ],
-  ssr: false,
+  ssr: true,
   googleFonts: {
     families: {
       Roboto: {

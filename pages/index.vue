@@ -8,7 +8,9 @@
     <SectionThree />
     <SectionFour />
     <SectionFive />
+    <!-- <ClientOnly fallback-tag="span" fallback="Loading on server..."> -->
     <SectionSix />
+    <!-- </ClientOnly> -->
     <!-- <SectionSeven /> -->
     <Footer />
   </div>
