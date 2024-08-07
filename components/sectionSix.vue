@@ -50,7 +50,7 @@ import cloudImage from '~/public/images/section-six/cloud.webp'
 import { generateHash } from '~/utils/generateHash'
 
 const inView = ref(false)
-const { publicKey, secretIntegrityKey: secret } = useEnvConfig()
+const { publicKey } = useEnvConfig()
 
 const { target } = useIntersectionObserver(() => {
   inView.value = true
@@ -73,13 +73,12 @@ const handleDonate = async () => {
   if (customAmount.value) {
     amount.value = parseInt(customAmount.value) * 100
   }
-  console.log(amount.value, secret)
-  if (amount.value > 0 && secret) {
+  console.log(amount.value)
+  if (amount.value > 0) {
     hash.value = await generateHash(
       reference.value,
       amount.value,
-      currency,
-      secret
+      currency
     )
     console.log('Generated Hash:', hash.value)
   } else {
@@ -146,7 +145,7 @@ const handleDonate = async () => {
   }
   .donation {
     display: flex;
-    gap: 4rem;
+    gap: 2rem;
     align-items: center;
 
     button {

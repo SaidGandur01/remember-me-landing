@@ -2,7 +2,6 @@ export async function generateHash (
   reference: string,
   amount: number,
   currency: string,
-  secret: string,
   expirationTime: string = ''
 ) {
   const response = await fetch('/api/generateHash', {
@@ -14,7 +13,6 @@ export async function generateHash (
       reference,
       amount,
       currency,
-      secret,
       expirationTime
     })
   })

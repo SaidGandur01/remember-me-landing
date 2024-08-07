@@ -1,4 +1,5 @@
 import { H3Event, sendError, createError, readBody } from 'h3'
+import { useEnvConfig } from '~/composables/useEnvConfig'
 
 export default async function handler (event: H3Event) {
   if (event.req.method !== 'POST') {
@@ -6,13 +7,14 @@ export default async function handler (event: H3Event) {
   }
 
   const body = await readBody(event)
-  const { reference, amount, currency, secret, expirationTime } = body
+  const { reference, amount, currency, expirationTime } = body
+  const { secretEventsKey: SECRET } = useEnvConfig()
 
-  if (!reference || !amount || !currency || !secret) {
+  if (!reference || !amount || !currency || !SECRET) {
     return sendError(event, createError({ statusCode: 400, statusMessage: 'Missing required fields' }))
   }
 
-  const cadenaConcatenada = `${reference}${amount}${currency}${expirationTime || ''}${secret}`
+  const cadenaConcatenada = `${reference}${amount}${currency}${expirationTime || ''}${SECRET}`
 
   try {
     const encodedText = new TextEncoder().encode(cadenaConcatenada)

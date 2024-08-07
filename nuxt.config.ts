@@ -31,6 +31,19 @@ export default defineNuxtConfig({
     '@nuxtjs/eslint-module'
   ],
   ssr: true,
+  runtimeConfig: {
+    sandboxSecretIntegrityKey: '',
+    sandboxSecretEventsKey: '',
+    prodSecretIntegrityKey: '',
+    prodSecretEventsKey: '',
+
+    public: {
+      sandboxEndpoint: '',
+      sandboxPublicKey: '',
+      prodEndpoint: '',
+      prodPublicKey: ''
+    }
+  },
   googleFonts: {
     families: {
       Roboto: {

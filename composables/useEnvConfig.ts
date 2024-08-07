@@ -1,19 +1,12 @@
 export const useEnvConfig = () => {
-  const endpoint = process.env.NODE_ENV === 'production'
-    ? process.env.PROD_ENDPOINT
-    : process.env.SANDBOX_ENDPOINT
+  const config = useRuntimeConfig()
 
-  const publicKey = process.env.NODE_ENV === 'production'
-    ? process.env.PROD_PUBLIC_KEY
-    : process.env.SANDBOX_PUBLIC_KEY
+  const isProd = process.env.NODE_ENV === 'production'
 
-  const secretIntegrityKey = process.env.NODE_ENV === 'production'
-    ? process.env.PROD_SECRET_INTEGRITY_KEY
-    : process.env.SANDBOX_SECRET_INTEGRITY_KEY
-
-  const secretEventsKey = process.env.NODE_ENV === 'production'
-    ? process.env.PROD_SECRET_EVENTS_KEY
-    : process.env.SANDBOX_SECRET_EVENTS_KEY
+  const endpoint = isProd ? config.public.prodEndpoint : config.public.sandboxEndpoint
+  const publicKey = isProd ? config.public.prodPublicKey : config.public.sandboxPublicKey
+  const secretIntegrityKey = isProd ? config.prodSecretIntegrityKey : config.sandboxSecretIntegrityKey
+  const secretEventsKey = isProd ? config.prodSecretEventsKey : config.sandboxSecretEventsKey
 
   return {
     endpoint,
