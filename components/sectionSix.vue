@@ -51,7 +51,7 @@ import { generateHash } from '~/utils/generateHash'
 
 const inView = ref(false)
 const { publicKey } = useEnvConfig()
-
+console.log('public key: ', publicKey)
 const { target } = useIntersectionObserver(() => {
   inView.value = true
 })
