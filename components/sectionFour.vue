@@ -1,246 +1,194 @@
 <template>
-  <section class="section-four">
-    <div class="section-four-container">
-      <h2>Encontrar historias de acuerdo a tus intereses</h2>
-      <p>
-        Los niños podrán navegar por un gran listado de historias que permitirá
-        abrir la imaginación, conocer historias fascinantes y llevar grandes
-        recuerdos
-      </p>
+  <section ref="target" :class="{ 'in-view': inView }" class="section-four">
+    <div class="first-column">
+      <h1>RELATOS</h1>
       <div class="image-container">
-        <img src="~/public/images/section-four/kids.png" alt="kids" />
+        <img src="~/public/images/section-four/star.png" alt="start">
       </div>
-      <h2>Relatos</h2>
-      <div class="relatos-container">
-        <Swiper
-          :pagination="{
-            dynamicBullets: true,
-            clickable: true,
-          }"
-          :autoplay="{
-            delay: 3000,
-            disableOnInteraction: false,
-          }"
-          :modules="modules"
-        >
-          <SwiperSlide>
-            <div class="image-container">
-              <img src="~/public/images/section-four/father.png" alt="man" />
-            </div>
-            <div class="comment">
-              <h2>martin javier leon</h2>
-              <p>
-                Me encanta la oportunidad de contar mi vida, <br />
-                que pequeños niños puedan entender por lo que pasamos y asi <br />
-                poder quedar en sus memorias
-              </p>
-              <span> Leer la historia completa </span>
-            </div>
-          </SwiperSlide>
-          <SwiperSlide>
-            <div class="image-container">
-              <img src="~/public/images/section-four/father.png" alt="man" />
-            </div>
-            <div class="comment">
-              <h2>martin javier leon</h2>
-              <p>
-                Me encanta la oportunidad de contar mi vida, <br />
-                que pequeños niños puedan entender por lo que pasamos y asi <br />
-                poder quedar en sus memorias
-              </p>
-              <span> Leer la historia completa </span>
-            </div>
-          </SwiperSlide>
-          <SwiperSlide>
-            <div class="image-container">
-              <img src="~/public/images/section-four/father.png" alt="man" />
-            </div>
-            <div class="comment">
-              <h2>martin javier leon</h2>
-              <p>
-                Me encanta la oportunidad de contar mi vida, <br />
-                que pequeños niños puedan entender por lo que pasamos y asi <br />
-                poder quedar en sus memorias
-              </p>
-              <span> Leer la historia completa </span>
-            </div>
-          </SwiperSlide>
-          <SwiperSlide>
-            <div class="image-container">
-              <img src="~/public/images/section-four/father.png" alt="man" />
-            </div>
-            <div class="comment">
-              <h2>martin javier leon</h2>
-              <p>
-                Me encanta la oportunidad de contar mi vida, <br />
-                que pequeños niños puedan entender por lo que pasamos y asi <br />
-                poder quedar en sus memorias
-              </p>
-              <span> Leer la historia completa </span>
-            </div>
-          </SwiperSlide>
-        </Swiper>
+    </div>
+    <div class="second-column">
+      <div class="card">
+        <div class="card-image-wrapper">
+          <img src="~/public/images/section-four/card1.jpeg" alt="card1">
+        </div>
+        <span class="card-name">Juan</span>
+        <span class="card-message">“Me encanta la oportunidad de contar mi vida, los niños pueden
+          entender por nuestras experiencias y permanecer en sus
+          memorias”.</span>
+      </div>
+      <div class="card">
+        <div class="card-image-wrapper">
+          <img src="~/public/images/section-four/card2.jpeg" alt="card2">
+        </div>
+        <span class="card-name">Beatriz</span>
+        <span class="card-message">“Me encanta la oportunidad de contar mi vida, los niños pueden
+          entender por nuestras experiencias y permanecer en sus
+          memorias”.</span>
+      </div>
+      <div class="card">
+        <div class="card-image-wrapper">
+          <img src="~/public/images/section-four/card3.jpeg" alt="card3">
+        </div>
+        <span class="card-name">Rosa</span>
+        <span class="card-message">“Me encanta la oportunidad de contar mi vida, los niños pueden
+          entender por nuestras experiencias y permanecer en sus
+          memorias”.</span>
       </div>
     </div>
   </section>
 </template>
 <script lang="ts" setup>
-import 'swiper/css'
-import 'swiper/css/pagination'
-import { Swiper, SwiperSlide } from 'swiper/vue'
-import { Pagination, Autoplay } from 'swiper/modules'
+const inView = ref(false)
+const cardImageWrappers = ref<HTMLDivElement[]>([])
+const cardNames = ref<HTMLSpanElement[]>([])
+const cardMessages = ref<HTMLSpanElement[]>([])
 
-const modules = [Pagination, Autoplay]
+const { target } = useIntersectionObserver(() => {
+  inView.value = true
+  cardImageWrappers.value.forEach((wrapper) => {
+    wrapper.classList.add('in-view')
+  })
+  cardNames.value.forEach((name) => {
+    name.classList.add('in-view')
+  })
+  cardMessages.value.forEach((name) => {
+    name.classList.add('in-view')
+  })
+})
+
+onMounted(() => {
+  cardImageWrappers.value = Array.from(document.querySelectorAll('.card-image-wrapper'))
+  cardNames.value = Array.from(document.querySelectorAll('.card-name'))
+  cardMessages.value = Array.from(document.querySelectorAll('.card-message'))
+})
 </script>
 <style lang="scss" scoped>
 .section-four {
-  padding: 7rem 0;
-  min-height: 145vh;
+  padding: 7rem 12rem;
   position: relative;
   overflow: hidden;
-  .section-four-container {
+  display: flex;
+  gap: 10rem;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 1s ease-out 0.3s, transform 1s ease-out 0.3s;
+
+  &.in-view {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  .first-column {
     display: flex;
     flex-direction: column;
-  }
+    width: 20%;
+    gap: 5rem;
+    padding-top: 2rem;
+    justify-content: space-between;
 
-  h2 {
-    margin: 3rem 0 5rem;
-    color: var(--color-brand-implemented-200);
-    text-align: center;
-    font-size: 5.6rem;
-    font-weight: 800;
-    line-height: 110%;
-  }
-
-  p {
-    width: 70%;
-    margin: 0 auto;
-    color: var(--color-text);
-    text-align: center;
-    font-size: 1.8rem;
-    font-weight: 400;
-    line-height: 160%;
-  }
-
-  .image-container {
-    width: 30%;
-    margin: 8rem auto;
-
-    img {
-      width: 100%;
+    h1 {
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      font-size: 3.5rem;
+      color: var(--color-brand-implemented-500);
+      font-family: "Roboto", sans-serif;
     }
-  }
 
-  .relatos-container {
-    padding: 0 10rem 0 20rem;
-    .swiper {
-      width: 100%;
-      height: auto;
-    }
-    .swiper-slide {
-      display: flex;
-      flex-direction: row;
-    }
-    .swiper > :first-child {
-      margin-bottom: 6rem;
-    }
     .image-container {
-      width: 650px;
-      margin: 0;
       img {
-        width: 100%;
-        height: 100%;
+        width: 65%;
       }
     }
-    .comment {
-      width: fit-content;
-      padding: 4rem;
+  }
+
+  .second-column {
+    display: flex;
+    flex: 1;
+
+    .card {
       display: flex;
       flex-direction: column;
       gap: 1rem;
-      border-radius: 5px;
-      border: 1px solid var(--color-border-gray);
-      background: var(--color-white);
-      position: absolute;
-      top: 50%;
-      right: 15%;
-      transform: translateY(-50%);
-      box-shadow:
-        0px 0px 10px 0px rgba(0, 0, 0, 0.07),
-        0px 20px 25px -5px rgba(0, 0, 0, 0.1);
+      padding: 2rem;
 
-      h2 {
-        color: var(--color-text-gray);
-        margin: 1rem 0;
-        font-size: 2rem;
-        font-weight: 700;
-        line-height: 100%;
-        letter-spacing: 3px;
+      &-image-wrapper {
+        overflow: hidden;
+        opacity: 0;
+        transform: translateY(20px);
+        transition: opacity 1.5s ease-in-out, transform 1.5s ease-in-out;
+
+        &.in-view {
+          opacity: 1;
+          transform: translateY(0);
+        }
+
+        img {
+          width: 100%;
+          border-radius: 1rem;
+          animation: scaleRotate 15s infinite alternate;
+          box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1),
+                        0 6px 20px rgba(0, 0, 0, 0.1),
+                        0 8px 40px rgba(0, 0, 0, 0.2);
+        }
+      }
+
+      &-name {
         text-transform: uppercase;
-      }
-
-      p {
-        width: 100%;
-        text-align: inherit;
-        color: var(--color-text);
+        letter-spacing: 1px;
         font-size: 2rem;
-        font-style: normal;
-        font-weight: 400;
-        line-height: 160%;
-        margin: 0;
+        color: var(--color-brand-implemented-500);
+        font-family: "Roboto", sans-serif;
+        opacity: 0;
+        transform: translateY(20px);
+        transition: opacity 3s ease-in-out, transform 3s ease-in-out;
+
+        &.in-view {
+          opacity: 1;
+          transform: translateY(0);
+        }
       }
 
-      span {
-        color: var(--color-brand-implemented-700);
-        font-size: 1.6rem;
-        font-weight: 500;
-        line-height: 24px;
-        letter-spacing: 0.5px;
-      }
-    }
-  }
-  @media (max-width: 768px) {
-    padding: 7rem 0;
-    .section-four-container {
-      gap: 3rem;
-      min-height: auto;
-      margin: 0 4rem;
-    }
-    h2 {
-      font-size: 3.6rem;
-      margin: 0;
-    }
-    .image-container {
-      width: 100%;
-      margin: 0;
-    }
-    .relatos-container {
-      padding: 0;
-      .swiper > :first-child {
-        margin-bottom: 3rem;
-      }
-      .swiper-slide {
-        flex-direction: column;
-      }
-      .image-container {
-        width: 100%;
-      }
-      .comment {
-        position: unset;
-        transform: translateY(-10%);
-        margin: 0 2rem;
+      &-message {
+        letter-spacing: 1px;
+        font-size: 1.4rem;
+        color: #1f3a52;
+        line-height: 20px;
+        opacity: 0;
+        transform: translateY(20px);
+        transition: opacity 4s ease-in-out, transform 4s ease-in-out;
+
+        &.in-view {
+          opacity: 1;
+          transform: translateY(0);
+        }
       }
     }
   }
 }
-.section-four::before {
-  content: "";
-  z-index: -1001;
-  width: 100%;
-  height: 100%;
-  position: absolute;
-  transform: translateY(27%);
-  background: url("~/public/images/section-four/background.png") no-repeat;
-  background-size: contain;
+
+@media (max-width: 768px) {
+  .section-four {
+    padding: 5rem 2rem;
+    flex-direction: column;
+
+    .first-column {
+      display: none;
+    }
+
+    .second-column {
+      flex-direction: column;
+
+      .card {
+        text-align: center;
+        gap: 2rem;
+
+        &-image-wrapper {
+          img {
+            width: 70%;
+          }
+        }
+      }
+    }
+  }
 }
 </style>
