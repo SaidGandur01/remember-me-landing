@@ -29,9 +29,9 @@ export default async (event: H3Event) => {
     const { timestamp } = body
     console.log('SERVER VERCEL WEBHOOK BODY: ', body)
     const concatenatedValues = properties.join('')
-
+    console.log('SERVER VERCEL WEBHOOK properties: ', concatenatedValues)
     const concatenatedString = `${concatenatedValues}${timestamp}${SECRET}`
-
+    console.log('SERVER VERCEL WEBHOOK concatenatedString: ', concatenatedString)
     // Generar el checksum usando SHA256
     const hash = crypto
       .createHash('sha256')
