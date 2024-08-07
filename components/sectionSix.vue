@@ -10,14 +10,26 @@
       <span>Necesitamos de tu ayuda para que este proyecto cobre vida.</span>
     </div>
     <div class="donation">
-      <button class="donation-option" @click="selectAmount(500000)">
-        $5000
+      <button
+        class="donation-option"
+        :class="{ active: amount === 500000 }"
+        @click="selectAmount(500000)"
+      >
+        $5.000
       </button>
-      <button class="donation-option" @click="selectAmount(1000000)">
-        $10000
+      <button
+        class="donation-option"
+        :class="{ active: amount === 1000000 }"
+        @click="selectAmount(1000000)"
+      >
+        $10.000
       </button>
-      <button class="donation-option" @click="selectAmount(2000000)">
-        $20000
+      <button
+        class="donation-option"
+        :class="{ active: amount === 2000000 }"
+        @click="selectAmount(2000000)"
+      >
+        $20.000
       </button>
       <input
         v-model="customAmount"
@@ -25,7 +37,11 @@
         class="donation-input"
         placeholder="$ Escribe un monto"
       >
-      <button class="donation-button" @click="handleDonate">
+      <button
+        class="donation-button"
+        :disabled="!isDonateEnabled"
+        @click="handleDonate"
+      >
         Donar
       </button>
     </div>
@@ -34,12 +50,12 @@
         :is="'script'"
         src="https://checkout.wompi.co/widget.js"
         data-render="button"
+        :data-redirect-url="redirectUrl"
         :data-public-key="publicKey"
         :data-currency="currency"
         :data-amount-in-cents="amount"
         :data-reference="reference"
         :data-signature:integrity="hash"
-        redirect-url="https://www.rememberme.com.co/payment"
       />
     </form>
   </section>
@@ -51,7 +67,6 @@ import { generateHash } from '~/utils/generateHash'
 
 const inView = ref(false)
 const { publicKey } = useEnvConfig()
-console.log('public key: ', publicKey)
 const { target } = useIntersectionObserver(() => {
   inView.value = true
 })
@@ -60,8 +75,9 @@ const reference = ref<string>(generateTransactionId())
 const amount = ref<number>(0)
 const customAmount = ref<string>('')
 const currency = 'COP'
-// const expirationTime = '2023-06-09T20:28:50.000Z'
-console.log('testss')
+const redirectUrl = ref<string>('https://www.rememberme.com.co/payment')
+const isDonateEnabled = computed(() => amount.value > 0)
+
 const hash = ref('')
 
 const selectAmount = (value: number) => {
@@ -73,14 +89,9 @@ const handleDonate = async () => {
   if (customAmount.value) {
     amount.value = parseInt(customAmount.value) * 100
   }
-  console.log(amount.value)
+
   if (amount.value > 0) {
-    hash.value = await generateHash(
-      reference.value,
-      amount.value,
-      currency
-    )
-    console.log('Generated Hash:', hash.value)
+    hash.value = await generateHash(reference.value, amount.value, currency)
   } else {
     console.error('Please enter a valid amount')
   }
@@ -169,6 +180,10 @@ const handleDonate = async () => {
         background: var(--color-brand-implemented-500);
         color: #fff;
       }
+      &.active {
+        background: var(--color-brand-implemented-500);
+        color: #fff;
+      }
     }
 
     .donation-input {
@@ -179,11 +194,11 @@ const handleDonate = async () => {
       font-family: "Roboto", sans-serif;
       outline: none;
       background-color: transparent;
+      color: var(--color-brand-implemented-500);
 
       &::placeholder {
         color: var(--color-brand-implemented-500);
       }
-      color: var(--color-brand-implemented-500);
     }
 
     .donation-button {
@@ -198,6 +213,15 @@ const handleDonate = async () => {
       transition:
         background 0.3s ease,
         color 0.3s ease;
+
+      &:disabled {
+        background-color: #ccc;
+        cursor: not-allowed;
+      }
+
+      &:hover:enabled {
+        background-color: darken($color: #1d956a, $amount: 10%);
+      }
 
       &:hover {
         background-color: darken($color: #1d956a, $amount: 10%);
