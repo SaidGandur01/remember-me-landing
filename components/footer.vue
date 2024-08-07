@@ -87,7 +87,7 @@ footer {
     flex-direction: column;
     padding: 5rem 5rem;
     gap: 2rem;
-    min-height: 38vh;
+    min-height: 40vh;
     justify-content: flex-start;
 
     .copy {
