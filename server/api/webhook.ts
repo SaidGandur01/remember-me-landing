@@ -38,7 +38,8 @@ export default async (event: H3Event) => {
       .update(concatenatedString)
       .digest('hex')
       .toUpperCase()
-
+    console.log('SERVER VERCEL hash: ', hash)
+    console.log('SERVER VERCEL checksum: ', checksum)
     // Verificar el checksum
     if (hash !== checksum) {
       console.error('Checksum no válido')
