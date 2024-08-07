@@ -13,7 +13,7 @@ export default async (event: H3Event) => {
   try {
     const body = await readBody(event)
     const { secretEventsKey: SECRET } = useEnvConfig()
-    console.log('SERVER VERCEL WEBHOOK: ', SECRET)
+    console.log('SERVER VERCEL WEBHOOK:  ', SECRET)
     if (
       !body ||
       !body.data ||
