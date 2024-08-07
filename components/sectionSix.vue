@@ -61,7 +61,7 @@ const amount = ref<number>(0)
 const customAmount = ref<string>('')
 const currency = 'COP'
 // const expirationTime = '2023-06-09T20:28:50.000Z'
-console.log('tests')
+console.log('testss')
 const hash = ref('')
 
 const selectAmount = (value: number) => {
