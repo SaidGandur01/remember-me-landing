@@ -1,5 +1,5 @@
 <template>
-  <section class="section-six">
+  <section ref="target" :class="{ 'in-view': inView }" class="section-six">
     <img :src="cloudImage" alt="cloud" class="cloud-image">
     <div class="information">
       <h1>100%</h1>
@@ -32,6 +32,12 @@
 </template>
 <script lang="ts" setup>
 import cloudImage from '~/public/images/section-six/cloud.webp'
+
+const inView = ref(false)
+
+const { target } = useIntersectionObserver(() => {
+  inView.value = true
+})
 </script>
 <style lang="scss" scoped>
 .section-six {
@@ -43,6 +49,16 @@ import cloudImage from '~/public/images/section-six/cloud.webp'
   justify-content: center;
   align-items: center;
   background-color: #f1ffe5;
+  opacity: 0;
+  transform: translateY(20px);
+  transition:
+    opacity 1s ease-out 0.3s,
+    transform 1s ease-out 0.3s;
+
+  &.in-view {
+    opacity: 1;
+    transform: translateY(0);
+  }
 
   .cloud-image {
     width: 9%;
