@@ -14,10 +14,16 @@
     <button class="btn btn-md">
       Quiero Participar
     </button>
-    <button :class="{ 'none menuButton' : showMenu, 'menuButton': !showMenu}" @click="toggleMenu">
+    <button
+      :class="{ 'none menuButton': showMenu, menuButton: !showMenu }"
+      @click="toggleMenu"
+    >
       <CoreIconHamburger />
     </button>
-    <button :class="{ 'none menuButton' : !showMenu, 'menuButton': showMenu}" @click="toggleMenu">
+    <button
+      :class="{ 'none menuButton': !showMenu, menuButton: showMenu }"
+      @click="toggleMenu"
+    >
       <CoreIconClose />
     </button>
     <transition name="fade">
@@ -88,11 +94,17 @@ const onHandleClickOutside = (): void => {
     text-transform: uppercase;
     letter-spacing: 1px;
     font-weight: 400;
+    transition:
+      background 0.3s ease,
+      color 0.3s ease;
+
+    &:hover {
+      background: darken($color: #1d956a, $amount: 10%);
+    }
   }
   .none {
     display: none !important;
   }
-
   .menuButton {
     display: none;
     background: none;
@@ -111,6 +123,7 @@ const onHandleClickOutside = (): void => {
     line-height: 110%;
     margin-left: 1rem;
     margin: 0 auto;
+    padding-right: 2rem;
   }
 
   .burger-wrapper {
@@ -128,7 +141,7 @@ const onHandleClickOutside = (): void => {
     padding: 1rem;
     justify-content: space-between;
     height: 75px;
-    background-color: #F7FFF0 !important;
+    background-color: #f7fff0 !important;
 
     .btn {
       display: none;
