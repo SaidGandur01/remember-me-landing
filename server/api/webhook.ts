@@ -13,7 +13,7 @@ export default async (event: H3Event) => {
   try {
     const body = await readBody(event)
     const { secretEventsKey: SECRET } = useEnvConfig()
-
+    console.log('SERVER VERCEL WEBHOOK: ', SECRET)
     if (
       !body ||
       !body.data ||
@@ -27,7 +27,7 @@ export default async (event: H3Event) => {
     const { transaction } = body.data
     const { properties, checksum } = body.signature
     const { timestamp } = body
-
+    console.log('SERVER VERCEL WEBHOOK BODY: ', body)
     const concatenatedValues = properties.join('')
 
     const concatenatedString = `${concatenatedValues}${timestamp}${SECRET}`
