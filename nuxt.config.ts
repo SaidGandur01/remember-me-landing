@@ -41,7 +41,8 @@ export default defineNuxtConfig({
       sandboxEndpoint: '',
       sandboxPublicKey: '',
       prodEndpoint: '',
-      prodPublicKey: ''
+      prodPublicKey: '',
+      nodeEnv: ''
     }
   },
   googleFonts: {

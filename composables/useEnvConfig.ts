@@ -1,7 +1,7 @@
 export const useEnvConfig = () => {
   const config = useRuntimeConfig()
 
-  const isProd = process.env.NODE_ENV === 'production'
+  const isProd = config.public.nodeEnv === 'production'
   console.log({ isProd })
   let endpoint
   let publicKey
