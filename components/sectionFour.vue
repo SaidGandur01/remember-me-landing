@@ -3,7 +3,7 @@
     <div class="first-column">
       <h1>RELATOS</h1>
       <div class="image-container">
-        <img src="~/public/images/section-four/star.png" alt="start">
+        <img src="~/public/images/section-four/star.webp" alt="start">
       </div>
     </div>
     <div class="second-column">
