@@ -197,7 +197,7 @@ onMounted(() => {
 
         &-image-wrapper {
           img {
-            width: 70%;
+            width: 80%;
           }
         }
       }
