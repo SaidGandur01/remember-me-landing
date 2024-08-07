@@ -13,7 +13,6 @@ export default async (event: H3Event) => {
   try {
     const body = await readBody(event)
     const { secretEventsKey: SECRET } = useEnvConfig()
-    console.log('SERVER VERCEL WEBHOOK:  ', SECRET)
     if (
       !body ||
       !body.data ||
@@ -27,19 +26,16 @@ export default async (event: H3Event) => {
     const { transaction } = body.data
     const { checksum } = body.signature
     const { timestamp } = body
-    console.log('SERVER VERCEL WEBHOOK BODY: ', body)
     const concatenatedValues = `${transaction.id}${transaction.status}${transaction.amount_in_cents}`
-    console.log('SERVER VERCEL WEBHOOK properties: ', concatenatedValues)
     const concatenatedString = `${concatenatedValues}${timestamp}${SECRET}`
-    console.log('SERVER VERCEL WEBHOOK concatenatedString: ', concatenatedString)
+
     // Generar el checksum usando SHA256
     const hash = crypto
       .createHash('sha256')
       .update(concatenatedString)
       .digest('hex')
       .toLowerCase()
-    console.log('SERVER VERCEL hash: ', hash)
-    console.log('SERVER VERCEL checksum: ', checksum)
+
     // Verificar el checksum
     if (hash !== checksum) {
       console.error('Checksum no válido')

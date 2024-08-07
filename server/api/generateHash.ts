@@ -9,7 +9,7 @@ export default async function handler (event: H3Event) {
   const body = await readBody(event)
   const { reference, amount, currency, expirationTime } = body
   const { secretIntegrityKey: SECRET } = useEnvConfig()
-  console.log('SECRET FROM VERCEL: ', SECRET)
+
   if (!reference || !amount || !currency || !SECRET) {
     return sendError(event, createError({ statusCode: 400, statusMessage: 'Missing required fields' }))
   }

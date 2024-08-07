@@ -40,6 +40,8 @@ export default defineNuxtConfig({
     public: {
       sandboxEndpoint: '',
       sandboxPublicKey: '',
+      sandboxPublicTransactionEndpoint: '',
+      prodPublicTransactionEndpoint: '',
       prodEndpoint: '',
       prodPublicKey: '',
       nodeEnv: ''

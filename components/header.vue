@@ -2,7 +2,7 @@
   <nav v-click-outside="onHandleClickOutside" class="navbar">
     <div class="navbar-wrapper">
       <div class="navbar-logo">
-        <img src="/images/logo.svg" alt="logo">
+        <img src="/images/logo.svg" alt="logo" @click="goToHome">
       </div>
       <div class="nav-list">
         <a class="nav-link">El Proyecto</a>
@@ -35,6 +35,12 @@
 </template>
 <script lang="ts" setup>
 const showMenu = ref<boolean>(false)
+const router = useRouter()
+
+const goToHome = (): void => {
+  router.push('/')
+}
+
 const toggleMenu = function () {
   showMenu.value = !showMenu.value
 }
