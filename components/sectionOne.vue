@@ -24,7 +24,7 @@
   </main>
 </template>
 <script lang="ts" setup>
-import bgImage from '~/public/images/section-one/background.jpeg'
+import bgImage from '~/public/images/section-one/background.webp'
 </script>
 <style lang="scss" scoped>
 .section-one {
