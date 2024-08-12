@@ -2,17 +2,26 @@
   <div class="burger-container">
     <ul class="menu-list">
       <li class="menu-item">
-        <a class="nav-link">{{ $t('navbar.the_project') }}</a>
+        <a class="nav-link" @click="onRedirect('project')">{{ $t('navbar.the_project') }}</a>
       </li>
       <li class="menu-item">
-        <a class="nav-link">{{ $t('navbar.some_histories') }}</a>
+        <a class="nav-link" @click="onRedirect('stories')">{{ $t('navbar.some_histories') }}</a>
       </li>
       <li class="menu-item">
-        <a class="nav-link">{{ $t('navbar.about_us') }}</a>
+        <a class="nav-link" @click="onRedirect('about-us')">{{ $t('navbar.about_us') }}</a>
       </li>
     </ul>
   </div>
 </template>
+<script lang="ts" setup>
+import type { TRoutes } from '~/types'
+
+const router = useRouter()
+const onRedirect = (path: TRoutes): void => {
+  router.push(path)
+}
+
+</script>
 <style lang="scss" scoped>
 .burger-container {
   padding: 0 3rem 2rem;

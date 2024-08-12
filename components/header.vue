@@ -2,12 +2,12 @@
   <nav v-click-outside="onHandleClickOutside" class="navbar">
     <div class="navbar-wrapper">
       <div class="navbar-logo">
-        <img src="/images/logo.svg" alt="logo" @click="goToHome">
+        <img src="/images/logo.svg" alt="logo" @click="onRedirect('/')">
       </div>
       <div class="nav-list">
-        <a class="nav-link">{{ $t('navbar.the_project') }}</a>
-        <a class="nav-link">{{ $t('navbar.some_histories') }}</a>
-        <a class="nav-link">{{ $t('navbar.about_us') }}</a>
+        <a class="nav-link" @click="onRedirect('project')">{{ $t('navbar.the_project') }}</a>
+        <a class="nav-link" @click="onRedirect('stories')">{{ $t('navbar.some_histories') }}</a>
+        <a class="nav-link" @click="onRedirect('about-us')">{{ $t('navbar.about_us') }}</a>
         <button v-if="false" @click="changeLanguage('en')">
           English
         </button>
@@ -15,7 +15,7 @@
           Español
         </button>
       </div>
-      <span class="title">{{ $t('shared.remember_me') }}</span>
+      <span class="title" @click="onRedirect('/')">{{ $t('shared.remember_me') }}</span>
     </div>
     <button class="btn btn-md">
       {{ $t('shared.i_want_participate') }}
@@ -40,13 +40,11 @@
   </nav>
 </template>
 <script lang="ts" setup>
-const showMenu = ref<boolean>(false)
-const router = useRouter()
-const { locale } = useTranslation()
+import type { TRoutes } from '~/types'
 
-const goToHome = (): void => {
-  router.push('/')
-}
+const { locale } = useTranslation()
+const router = useRouter()
+const showMenu = ref<boolean>(false)
 
 const toggleMenu = function () {
   showMenu.value = !showMenu.value
@@ -57,6 +55,10 @@ const onHandleClickOutside = (): void => {
 
 const changeLanguage = (lang: string) => {
   locale.value = lang
+}
+
+const onRedirect = (path: TRoutes): void => {
+  router.push(path)
 }
 </script>
 <style lang="scss" scoped>
@@ -70,6 +72,7 @@ const changeLanguage = (lang: string) => {
   &-logo {
     width: 60px;
     height: 100%;
+    cursor: pointer;
 
     img {
       width: 90%;
