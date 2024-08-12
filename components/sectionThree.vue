@@ -7,18 +7,35 @@
       <h3>{{ $t('section_three.title') }}</h3>
       <h2>{{ $t('section_three.message_one') }}</h2>
       <p>{{ $t('section_three.message_two') }}</p>
-      <button class="btn btn-lg">
+      <button class="btn btn-lg" @click="openRegisterModal">
         {{ $t('shared.i_want_participate') }}
       </button>
     </div>
   </section>
+  <RegisterForm
+    :is-open="isRegisterModalOpen"
+    @close="closeRegisterModal"
+    @submit="handleSubmit"
+  />
 </template>
 
 <script lang="ts" setup>
-const inView = ref(false)
+const inView = ref<boolean>(false)
+const isRegisterModalOpen = ref<boolean>(false)
+
 const { target } = useIntersectionObserver(() => {
   inView.value = true
 })
+const openRegisterModal = (): void => {
+  isRegisterModalOpen.value = true
+}
+const closeRegisterModal = (): void => {
+  isRegisterModalOpen.value = false
+}
+const handleSubmit = (formData: any): void => {
+  console.log('Form Data Submitted:', formData)
+  // Handle form submission, e.g., send to server
+}
 </script>
 <style lang="scss" scoped>
 .section-three {

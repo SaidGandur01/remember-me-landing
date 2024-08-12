@@ -17,7 +17,7 @@
       </div>
       <span class="title" @click="onRedirect('/')">{{ $t('shared.remember_me') }}</span>
     </div>
-    <button class="btn btn-md">
+    <button class="btn btn-md" @click="openRegisterModal">
       {{ $t('shared.i_want_participate') }}
     </button>
     <button
@@ -38,6 +38,11 @@
       </div>
     </transition>
   </nav>
+  <RegisterForm
+    :is-open="isRegisterModalOpen"
+    @close="closeRegisterModal"
+    @submit="handleSubmit"
+  />
 </template>
 <script lang="ts" setup>
 import type { TRoutes } from '~/types'
@@ -45,6 +50,7 @@ import type { TRoutes } from '~/types'
 const { locale } = useTranslation()
 const router = useRouter()
 const showMenu = ref<boolean>(false)
+const isRegisterModalOpen = ref<boolean>(false)
 
 const toggleMenu = function () {
   showMenu.value = !showMenu.value
@@ -52,11 +58,19 @@ const toggleMenu = function () {
 const onHandleClickOutside = (): void => {
   showMenu.value = false
 }
-
 const changeLanguage = (lang: string) => {
   locale.value = lang
 }
-
+const openRegisterModal = (): void => {
+  isRegisterModalOpen.value = true
+}
+const closeRegisterModal = (): void => {
+  isRegisterModalOpen.value = false
+}
+const handleSubmit = (formData: any): void => {
+  console.log('Form Data Submitted:', formData)
+  // Handle form submission, e.g., send to server
+}
 const onRedirect = (path: TRoutes): void => {
   router.push(path)
 }

@@ -10,7 +10,7 @@
         {{ $t("section_one.main_message") }}
       </p>
       <div class="button-wrapper">
-        <button class="btn btn-md" @click="openModal">
+        <button class="btn btn-md" @click="openRegisterModal">
           {{ $t("shared.i_want_participate") }}
         </button>
         <button class="btn btn-md outlined" @click="onRedirect('project')">
@@ -21,7 +21,11 @@
     <div class="second-column">
       <img :src="bgImage" alt="background-image">
     </div>
-    <RegisterForm :is-open="isModalOpen" @close="closeModal" @submit="handleSubmit" />
+    <RegisterForm
+      :is-open="isRegisterModalOpen"
+      @close="closeRegisterModal"
+      @submit="handleSubmit"
+    />
   </main>
 </template>
 <script lang="ts" setup>
@@ -29,21 +33,18 @@ import bgImage from '~/public/images/section-one/background.webp'
 import type { TRoutes } from '~/types'
 
 const router = useRouter()
-const isModalOpen = ref<boolean>(false)
+const isRegisterModalOpen = ref<boolean>(false)
 
-const openModal = () => {
-  isModalOpen.value = true
+const openRegisterModal = (): void => {
+  isRegisterModalOpen.value = true
 }
-
-const closeModal = () => {
-  isModalOpen.value = false
+const closeRegisterModal = (): void => {
+  isRegisterModalOpen.value = false
 }
-
-const handleSubmit = (formData: any) => {
+const handleSubmit = (formData: any): void => {
   console.log('Form Data Submitted:', formData)
   // Handle form submission, e.g., send to server
 }
-
 const onRedirect = (path: TRoutes): void => {
   router.push(path)
 }
