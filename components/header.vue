@@ -6,7 +6,7 @@
       </div>
       <div class="nav-list">
         <a class="nav-link" @click="onRedirect('project')">{{ $t('navbar.the_project') }}</a>
-        <a class="nav-link" @click="onRedirect('stories')">{{ $t('navbar.some_histories') }}</a>
+        <a class="nav-link hide" @click="onRedirect('stories')">{{ $t('navbar.some_histories') }}</a>
         <a class="nav-link" @click="onRedirect('about-us')">{{ $t('navbar.about_us') }}</a>
         <button v-if="false" @click="changeLanguage('en')">
           English
@@ -97,6 +97,10 @@ const onRedirect = (path: TRoutes): void => {
     line-height: 2.4rem;
     letter-spacing: 0.1rem;
     transition: all 0.2s ease;
+
+    &.hide {
+      display: none;
+    }
 
     &:hover {
       transform: translateY(-5px) scale(1.1);

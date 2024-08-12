@@ -2,18 +2,19 @@
   <main class="section-one">
     <div class="first-column">
       <h1>
-        {{ $t('section_one.building') }} <br> {{ $t('section_one.bridges') }} <br>
-        {{ $t('section_one.generational') }}
+        {{ $t("section_one.building") }} <br>
+        {{ $t("section_one.bridges") }} <br>
+        {{ $t("section_one.generational") }}
       </h1>
       <p>
-        {{ $t('section_one.main_message') }}
+        {{ $t("section_one.main_message") }}
       </p>
       <div class="button-wrapper">
         <button class="btn btn-md">
-          {{ $t('shared.i_want_participate') }}
+          {{ $t("shared.i_want_participate") }}
         </button>
-        <button class="btn btn-md outlined">
-          {{ $t('shared.what_we_do') }}
+        <button class="btn btn-md outlined" @click="onRedirect('project')">
+          {{ $t("shared.what_we_do") }}
         </button>
       </div>
     </div>
@@ -24,13 +25,20 @@
 </template>
 <script lang="ts" setup>
 import bgImage from '~/public/images/section-one/background.webp'
+import type { TRoutes } from '~/types'
+
+const router = useRouter()
+
+const onRedirect = (path: TRoutes): void => {
+  router.push(path)
+}
 </script>
 <style lang="scss" scoped>
 .section-one {
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: #F1FFE5;
+  background-color: #f1ffe5;
 
   .first-column {
     width: 50%;
@@ -48,7 +56,7 @@ import bgImage from '~/public/images/section-one/background.webp'
       font-weight: 800;
       line-height: 110%;
       letter-spacing: 1px;
-      font-family: 'Roboto', sans-serif;
+      font-family: "Roboto", sans-serif;
     }
     p {
       color: #343434;
@@ -56,7 +64,7 @@ import bgImage from '~/public/images/section-one/background.webp'
       font-weight: 400;
       line-height: 4rem;
       letter-spacing: 0.1px;
-      font-family: 'Roboto', sans-serif;
+      font-family: "Roboto", sans-serif;
       animation: fadeInUp 1.6s forwards ease-in-out;
     }
 

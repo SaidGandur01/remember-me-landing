@@ -4,7 +4,7 @@
       <li class="menu-item">
         <a class="nav-link" @click="onRedirect('project')">{{ $t('navbar.the_project') }}</a>
       </li>
-      <li class="menu-item">
+      <li class="menu-item hide">
         <a class="nav-link" @click="onRedirect('stories')">{{ $t('navbar.some_histories') }}</a>
       </li>
       <li class="menu-item">
@@ -29,6 +29,10 @@ const onRedirect = (path: TRoutes): void => {
 
   .menu-list {
     list-style: none;
+  }
+
+  .hide {
+    display: none;
   }
 
   .menu-item {
