@@ -1,0 +1,1 @@
+import{_ as t}from"./CdmtJxBE.js";import{_ as o,v as a,z as n,L as r,x as e,t as c}from"./CW-1JRD4.js";const _={},i=e("div",{class:"stories-page"},[e("h1",null,"This is the stories page")],-1);function l(m,p){const s=t;return c(),a(r,null,[n(s),i],64)}const u=o(_,[["render",l]]);export{u as default};
