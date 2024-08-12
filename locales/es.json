@@ -1,0 +1,10 @@
+{
+  "navbar": {
+    "the_project": "El proyecto",
+    "some_histories": "Algunas historias",
+    "about_us": "Acerca de nosotros"
+  },
+  "shared": {
+    "i_want_participate": "Quiero participar"
+  }
+}

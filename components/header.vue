@@ -5,9 +5,9 @@
         <img src="/images/logo.svg" alt="logo" @click="goToHome">
       </div>
       <div class="nav-list">
-        <a class="nav-link">El Proyecto</a>
-        <a class="nav-link">Algunas historias</a>
-        <a class="nav-link">Sobre Nosotros</a>
+        <a class="nav-link">{{ $t('navbar.the_project') }}</a>
+        <a class="nav-link">{{ $t('navbar.some_histories') }}</a>
+        <a class="nav-link">{{ $t('navbar.about_us') }}</a>
       </div>
       <span class="title"> Remember me </span>
     </div>

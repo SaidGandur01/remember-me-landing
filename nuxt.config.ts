@@ -1,8 +1,14 @@
-// https://nuxt.com/docs/api/configuration/nuxt-config
+import { resolve, dirname } from 'node:path'
+import { fileURLToPath } from 'url'
+import VueI18nVitePlugin from '@intlify/unplugin-vue-i18n/vite'
+
 export default defineNuxtConfig({
   app: {
     head: {
       charset: 'utf-8',
+      htmlAttrs: {
+        lang: 'es'
+      },
       meta: [
         {
           name: 'viewport',
@@ -24,7 +30,6 @@ export default defineNuxtConfig({
   },
 
   css: ['@/assets/css/base.css', '@fortawesome/fontawesome-svg-core/styles.css'],
-
   modules: [
     '@nuxtjs/google-fonts',
     '@nuxt/image',
@@ -61,5 +66,14 @@ export default defineNuxtConfig({
     { src: '~/plugins/intersection-observer.client.ts', mode: 'client' }
   ],
   devtools: { enabled: false },
+  vite: {
+    plugins: [
+      VueI18nVitePlugin({
+        include: [
+          resolve(dirname(fileURLToPath(import.meta.url)), './locales/*.json')
+        ]
+      })
+    ]
+  },
   compatibilityDate: '2024-08-05'
 })
