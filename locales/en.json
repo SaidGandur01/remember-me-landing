@@ -25,6 +25,15 @@
     "message_one": "We open dialogue spaces for all our content creators",
     "message_two": "Facilitating people to share their stories and experiences with new generations, ensuring that these stories endure over time."
   },
+  "section_four": {
+    "title": "Stories",
+    "story_one_name": "Jorge",
+    "story_one_message": "“I love the opportunity to share my life, children can learn from our experiences and keep them in their memories.”",
+    "story_two_name": "Nelly",
+    "story_two_message": "“It's gratifying to know that my story can inspire and teach new generations. I hope my life experiences help them build a better future.”",
+    "story_three_name": "Maria T.",
+    "story_three_message": "“Sharing my experiences is like leaving a legacy. I want young people to learn from our stories and carry them with them as they grow.”"
+  },
   "shared": {
     "remember_me": "Remember Me",
     "i_want_participate": "I Want to Participate",
