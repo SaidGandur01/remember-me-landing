@@ -1,7 +1,7 @@
 <template>
   <section ref="target" :class="{ 'in-view': inView }" class="section-four">
     <div class="first-column">
-      <h1>RELATOS</h1>
+      <h1>{{ $t('section_four.title') }}</h1>
       <div class="image-container">
         <img src="~/public/images/section-four/star.webp" alt="start">
       </div>
@@ -11,28 +11,22 @@
         <div class="card-image-wrapper">
           <img src="~/public/images/section-four/card1.webp" alt="card1">
         </div>
-        <span class="card-name">Juan</span>
-        <span class="card-message">“Me encanta la oportunidad de contar mi vida, los niños pueden
-          entender por nuestras experiencias y permanecer en sus
-          memorias”.</span>
+        <span class="card-name">{{ $t('section_four.story_one_name') }}</span>
+        <span class="card-message">{{ $t('section_four.story_one_message') }}</span>
       </div>
       <div class="card">
         <div class="card-image-wrapper">
           <img src="~/public/images/section-four/card2.webp" alt="card2">
         </div>
-        <span class="card-name">Beatriz</span>
-        <span class="card-message">“Me encanta la oportunidad de contar mi vida, los niños pueden
-          entender por nuestras experiencias y permanecer en sus
-          memorias”.</span>
+        <span class="card-name">{{ $t('section_four.story_two_name') }}</span>
+        <span class="card-message">{{ $t('section_four.story_two_message') }}</span>
       </div>
       <div class="card">
         <div class="card-image-wrapper">
           <img src="~/public/images/section-four/card3.webp" alt="card3">
         </div>
-        <span class="card-name">Rosa</span>
-        <span class="card-message">“Me encanta la oportunidad de contar mi vida, los niños pueden
-          entender por nuestras experiencias y permanecer en sus
-          memorias”.</span>
+        <span class="card-name">{{ $t('section_four.story_three_name') }}</span>
+        <span class="card-message">{{ $t('section_four.story_three_message') }}</span>
       </div>
     </div>
   </section>

@@ -25,6 +25,15 @@
     "message_one": "Abrimos espacios de dialogo para todos nuestros creadores de contenido",
     "message_two": "Facilitar que las personas compartan sus historias y vivencias con nuevas generaciones, asegurando que estas historias perduren en el tiempo."
   },
+  "section_four": {
+    "title": "Relatos",
+    "story_one_name": "Jorge",
+    "story_one_message": "“Me encanta la oportunidad de contar mi vida, los niños pueden entender por nuestras experiencias y permanecer en sus memorias”.",
+    "story_two_name": "Nelly",
+    "story_two_message": "“Es gratificante saber que mi historia puede inspirar y enseñar a las nuevas generaciones. Espero que mis experiencias de vida les sirvan para construir un futuro mejor”.",
+    "story_three_name": "Maria T.",
+    "story_three_message": "“Contar mis vivencias es como dejar un legado. Quiero que los jóvenes aprendan de nuestras experiencias y que estas historias los acompañen en su crecimiento”."
+  },
   "shared": {
     "remember_me": "Remember me",
     "i_want_participate": "Quiero participar",
