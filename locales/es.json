@@ -20,6 +20,11 @@
     "title_four": "Conectar generaciones",
     "description_four": "Conectamos los extremos sociales, las generaciones mas adultas con las más jóvenes"
   },
+  "section_three": {
+    "title": "Historias",
+    "message_one": "Abrimos espacios de dialogo para todos nuestros creadores de contenido",
+    "message_two": "Facilitar que las personas compartan sus historias y vivencias con nuevas generaciones, asegurando que estas historias perduren en el tiempo."
+  },
   "shared": {
     "remember_me": "Remember me",
     "i_want_participate": "Quiero participar",

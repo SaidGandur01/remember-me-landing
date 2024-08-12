@@ -4,14 +4,11 @@
       <img src="~/public/images/section-three/item-one.webp" alt="man reading">
     </div>
     <div class="information-container">
-      <h3>Historias</h3>
-      <h2>Permitir a gente (mayor?) contar sus historias</h2>
-      <p>
-        Permitir a las personas transmitir sus historias de vida y vivencias a
-        nuevas generaciones y que estas historias no se pierdan.
-      </p>
+      <h3>{{ $t('section_three.title') }}</h3>
+      <h2>{{ $t('section_three.message_one') }}</h2>
+      <p>{{ $t('section_three.message_two') }}</p>
       <button class="btn btn-lg">
-        Quiero participar!
+        {{ $t('shared.i_want_participate') }}
       </button>
     </div>
   </section>
