@@ -53,6 +53,10 @@
     "terms": "Términos y condiciones",
     "contact": "Contáctanos"
   },
+  "project": {
+    "message_part_one": "\"Remember me\" es un proyecto que nace del deseo de crear un puente entre generaciones, uniendo el pasado y el futuro a través de las historias de vida. Queremos abrir espacios donde las personas mayores puedan compartir su sabiduría, experiencias y vivencias, asegurando que sus relatos no se pierdan en el tiempo. Nuestro objetivo es que estas historias no solo perduren, sino que también inspiren y enseñen a las nuevas generaciones, fortaleciendo el vínculo entre diferentes edades y culturas.",
+    "message_part_two": "A través de \"Remember me,\" buscamos construir un legado colectivo, donde cada historia sea una pieza clave en la creación de un mundo más comprensivo y unido. Creemos que al conectar las voces del pasado con los corazones del futuro, estamos sembrando las semillas de un futuro más humano, empático y lleno de propósito. Este proyecto es más que una plataforma; es un movimiento que celebra la riqueza de nuestras historias y la importancia de mantener viva la memoria colectiva."
+  },
   "shared": {
     "remember_me": "Remember me",
     "i_want_participate": "Quiero participar",

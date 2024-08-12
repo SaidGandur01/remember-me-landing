@@ -1,7 +1,7 @@
 <template>
   <section ref="target" :class="{ 'in-view': inView }" class="section-four">
     <div class="first-column">
-      <h1>{{ $t('section_four.title') }}</h1>
+      <h1>{{ $t("section_four.title") }}</h1>
       <div class="image-container">
         <img src="~/public/images/section-four/star.webp" alt="start">
       </div>
@@ -11,22 +11,28 @@
         <div class="card-image-wrapper">
           <img src="~/public/images/section-four/card1.webp" alt="card1">
         </div>
-        <span class="card-name">{{ $t('section_four.story_one_name') }}</span>
-        <span class="card-message">{{ $t('section_four.story_one_message') }}</span>
+        <span class="card-name">{{ $t("section_four.story_one_name") }}</span>
+        <span class="card-message">{{
+          $t("section_four.story_one_message")
+        }}</span>
       </div>
       <div class="card">
         <div class="card-image-wrapper">
           <img src="~/public/images/section-four/card2.webp" alt="card2">
         </div>
-        <span class="card-name">{{ $t('section_four.story_two_name') }}</span>
-        <span class="card-message">{{ $t('section_four.story_two_message') }}</span>
+        <span class="card-name">{{ $t("section_four.story_two_name") }}</span>
+        <span class="card-message">{{
+          $t("section_four.story_two_message")
+        }}</span>
       </div>
       <div class="card">
         <div class="card-image-wrapper">
           <img src="~/public/images/section-four/card3.webp" alt="card3">
         </div>
-        <span class="card-name">{{ $t('section_four.story_three_name') }}</span>
-        <span class="card-message">{{ $t('section_four.story_three_message') }}</span>
+        <span class="card-name">{{ $t("section_four.story_three_name") }}</span>
+        <span class="card-message">{{
+          $t("section_four.story_three_message")
+        }}</span>
       </div>
     </div>
   </section>
@@ -106,13 +112,18 @@ onMounted(() => {
     .card {
       display: flex;
       flex-direction: column;
-      gap: 1rem;
+      gap: 1.3rem;
       padding: 2rem;
 
       &-image-wrapper {
         overflow: hidden;
         opacity: 0;
         transform: translateY(20px);
+        border-radius: 1rem;
+        box-shadow:
+          0 4px 8px rgba(0, 0, 0, 0.1),
+          0 6px 20px rgba(0, 0, 0, 0.1),
+          0 8px 40px rgba(0, 0, 0, 0.2);
         transition:
           opacity 1.5s ease-in-out,
           transform 1.5s ease-in-out;
@@ -142,6 +153,7 @@ onMounted(() => {
         color: var(--color-brand-implemented-500);
         font-family: "Roboto", sans-serif;
         opacity: 0;
+        margin-top: 2rem;
         transform: translateY(20px);
         transition:
           opacity 3s ease-in-out,
@@ -187,12 +199,15 @@ onMounted(() => {
 
       .card {
         text-align: center;
-        gap: 2rem;
+        gap: 1rem;
+
+        &-name {
+          margin-top: 2.5rem;
+        }
 
         &-image-wrapper {
-          img {
-            width: 80%;
-          }
+          width: 80%;
+          margin: 0 auto;
         }
       }
     }
