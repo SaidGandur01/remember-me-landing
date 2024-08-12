@@ -1,15 +1,17 @@
 <template>
   <footer>
     <div class="copy">
-      <span>@{{ $t('footer.copy') }}</span>
+      <span>@{{ $t("footer.copy") }}</span>
     </div>
     <div class="media-wrapper">
       <div class="politics">
-        <span>{{ $t('footer.terms') }}</span>
-        <span>{{ $t('footer.contact') }}</span>
+        <span>{{ $t("footer.terms") }}</span>
+        <a :href="whatsappLink" target="_blank">
+          <span>{{ $t("footer.contact") }}</span>
+        </a>
       </div>
       <div class="logo">
-        <img src="/images/logo.svg" alt="logo">
+        <img src="/images/logo.svg" alt="logo" />
       </div>
       <div class="social-media">
         <div class="image-container first-element">
@@ -28,6 +30,11 @@
     </div>
   </footer>
 </template>
+<script lang="ts" setup>
+const whatsappNumber = '3012421936'
+const message = 'Hola!! Me gustaría saber más del proyecto.'
+const whatsappLink = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(message)}`
+</script>
 <style lang="scss" scoped>
 footer {
   padding: 4rem;
@@ -35,7 +42,7 @@ footer {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: #1F3A52;
+  background-color: #1f3a52;
   min-height: 30vh;
   position: relative;
 
@@ -106,8 +113,9 @@ footer {
       }
       .politics {
         order: 3;
+        white-space: nowrap;
       }
-      .social-media{
+      .social-media {
         margin: 0;
         order: 2;
       }
