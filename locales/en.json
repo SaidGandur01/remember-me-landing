@@ -48,6 +48,11 @@
     "change_amount": "Enter an amount",
     "donate": "Donate"
   },
+  "footer": {
+    "copy": "2024 Recuerda mi Historia Foundation. All rights reserved.",
+    "terms": "Terms and Conditions",
+    "contact": "Contact Us"
+  },
   "shared": {
     "remember_me": "Remember Me",
     "i_want_participate": "I Want to Participate",

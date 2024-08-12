@@ -1,13 +1,12 @@
 <template>
   <footer>
     <div class="copy">
-      <span>@ 2024 Wrapp. All rights reserved</span>
+      <span>@{{ $t('footer.copy') }}</span>
     </div>
     <div class="media-wrapper">
       <div class="politics">
-        <span>Terms</span>
-        <span>Privacy</span>
-        <span>Contact</span>
+        <span>{{ $t('footer.terms') }}</span>
+        <span>{{ $t('footer.contact') }}</span>
       </div>
       <div class="logo">
         <img src="/images/logo.svg" alt="logo">
@@ -69,8 +68,10 @@ footer {
     }
     .politics {
       display: flex;
+      flex-direction: column;
+      text-align: center;
       font-size: 2rem;
-      gap: 3rem;
+      gap: 1.5rem;
 
       span {
         cursor: pointer;
@@ -91,21 +92,24 @@ footer {
     justify-content: flex-start;
 
     .copy {
-      white-space: nowrap;
+      width: 100%;
+      text-align: center;
+      line-height: 2.2rem;
     }
     .media-wrapper {
       flex-direction: column;
       gap: 3rem;
+      margin-bottom: 10rem;
 
       .logo {
         order: 1;
       }
       .politics {
-        order: 2;
+        order: 3;
       }
       .social-media{
         margin: 0;
-        order: 3;
+        order: 2;
       }
     }
   }

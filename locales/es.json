@@ -48,6 +48,11 @@
     "change_amount": "Escribe un monto",
     "donate": "Donar"
   },
+  "footer": {
+    "copy": "2024 Fundación Recuerda mi Historia. Todos los derechos reservados",
+    "terms": "Términos y condiciones",
+    "contact": "Contáctanos"
+  },
   "shared": {
     "remember_me": "Remember me",
     "i_want_participate": "Quiero participar",
