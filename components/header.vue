@@ -8,6 +8,8 @@
         <a class="nav-link">{{ $t('navbar.the_project') }}</a>
         <a class="nav-link">{{ $t('navbar.some_histories') }}</a>
         <a class="nav-link">{{ $t('navbar.about_us') }}</a>
+        <button @click="changeLanguage('en')">English</button>
+        <button @click="changeLanguage('es')">Español</button>
       </div>
       <span class="title">{{ $t('shared.remember_me') }}</span>
     </div>
@@ -36,6 +38,7 @@
 <script lang="ts" setup>
 const showMenu = ref<boolean>(false)
 const router = useRouter()
+const { locale } = useTranslation()
 
 const goToHome = (): void => {
   router.push('/')
@@ -46,6 +49,10 @@ const toggleMenu = function () {
 }
 const onHandleClickOutside = (): void => {
   showMenu.value = false
+}
+
+const changeLanguage = (lang: string) => {
+  locale.value = lang
 }
 </script>
 <style lang="scss" scoped>

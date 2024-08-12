@@ -34,6 +34,11 @@
     "story_three_name": "Maria T.",
     "story_three_message": "“Contar mis vivencias es como dejar un legado. Quiero que los jóvenes aprendan de nuestras experiencias y que estas historias los acompañen en su crecimiento”."
   },
+  "section_five": {
+    "title_part_one": "Seguimiento de",
+    "title_part_two": "alumnos",
+    "main_message": "Las historias serán categorizadas por contenido y edad y podrán ser asignadas a grupos estudiantiles. Podrás seguir su estados y permitir a los alumnos comunicarse."
+  },
   "shared": {
     "remember_me": "Remember me",
     "i_want_participate": "Quiero participar",

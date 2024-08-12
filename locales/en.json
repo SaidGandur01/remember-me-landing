@@ -34,6 +34,11 @@
     "story_three_name": "Maria T.",
     "story_three_message": "“Sharing my experiences is like leaving a legacy. I want young people to learn from our stories and carry them with them as they grow.”"
   },
+  "section_five": {
+    "title_part_one": "Student",
+    "title_part_two": "Tracking",
+    "main_message": "The stories will be categorized by content and age and can be assigned to student groups. You will be able to track their status and allow students to communicate."
+  },
   "shared": {
     "remember_me": "Remember Me",
     "i_want_participate": "I Want to Participate",

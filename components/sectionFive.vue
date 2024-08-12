@@ -2,14 +2,10 @@
   <section ref="target" :class="{ 'in-view': inView }" class="section-five">
     <div class="first-column">
       <h1>
-        Seguimiento de <br>
-        alumnos
+        {{ $t("section_five.title_part_one") }} <br>
+        {{ $t("section_five.title_part_two") }}
       </h1>
-      <p>
-        Las historias serán categorizadas por contenido y edad y podrán ser
-        asignadas a grupos estudiantiles. Podrás seguir su estados y permitir a
-        los alumnos comunicarse.
-      </p>
+      <p>{{ $t("section_five.main_message") }}</p>
     </div>
     <div class="second-column">
       <img :src="bgImage" alt="background-image">
@@ -61,7 +57,7 @@ const { target } = useIntersectionObserver(() => {
       font-family: "Roboto", sans-serif;
     }
     p {
-      color: #1F3A52;
+      color: #1f3a52;
       font-size: 1.8rem;
       font-weight: 400;
       line-height: 3rem;
