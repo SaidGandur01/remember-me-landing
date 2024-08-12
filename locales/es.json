@@ -4,11 +4,21 @@
     "some_histories": "Algunas historias",
     "about_us": "Acerca de nosotros"
   },
-  "section-one": {
+  "section_one": {
     "building": "Construyendo",
     "bridges": "puentes",
     "generational": "generacionales",
-    "main-message": "Construimos espacios de dialogos entre diferentes generaciones."
+    "main_message": "Construimos espacios de dialogos entre diferentes generaciones."
+  },
+  "section_two": {
+    "title_one": "Una historia a la vez",
+    "description_one": "Construimos un camino juntos un paso a la vez",
+    "title_two": "Generar progreso social",
+    "description_two": "Impulsamos el desarrollo social a través de la educación y la conextion entre generaciones",
+    "title_three": "Transmitir historias de vida",
+    "description_three": "Recolectamos información en muchos formatos y las ponemos a disposición del mundo",
+    "title_four": "Conectar generaciones",
+    "description_four": "Conectamos los extremos sociales, las generaciones mas adultas con las más jóvenes"
   },
   "shared": {
     "remember_me": "Remember me",

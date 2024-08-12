@@ -23,26 +23,28 @@
 </template>
 
 <script lang="ts" setup>
+const { t } = useTranslation()
+
 const items = [
   {
     image: '/images/section-two/item-one.svg',
-    title: 'Ayudar a recordar',
-    description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.'
+    title: t('section_two.title_one'),
+    description: t('section_two.description_one')
   },
   {
     image: '/images/section-two/item-two.svg',
-    title: 'Aprender',
-    description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.'
+    title: t('section_two.title_two'),
+    description: t('section_two.description_two')
   },
   {
     image: '/images/section-two/item-three.svg',
-    title: 'Transmitir historias de vida',
-    description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.'
+    title: t('section_two.title_three'),
+    description: t('section_two.description_three')
   },
   {
     image: '/images/section-two/item-four.svg',
-    title: 'Conectar generaciones',
-    description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.'
+    title: t('section_two.title_four'),
+    description: t('section_two.description_four')
   }
 ]
 
@@ -98,6 +100,7 @@ onMounted(() => {
   .carousel-slide {
     flex: 0 0 auto;
     width: 13%;
+    min-height: 21rem;
   }
 
   .item {
@@ -108,9 +111,10 @@ onMounted(() => {
     text-align: center;
     background: #fff;
     border-radius: 10px;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
     padding: 2rem;
     margin: 0 5rem;
+    height: 98%;
   }
 
   .image {
@@ -124,21 +128,30 @@ onMounted(() => {
   h3 {
     font-size: 1.8rem;
     margin: 0.5rem 0;
+    letter-spacing: 1px;
   }
 
   p {
     font-size: 1.4rem;
+    line-height: 2.3rem;
   }
 }
 @media (max-width: 768px) {
   .carousel-slide {
-    width: 10% !important;
+    width: 8% !important;
+    min-height: 21rem;
   }
   img {
     width: 6rem !important;
   }
   .item {
+    height: 98%;
     margin: 0 2.5rem !important;
+    gap: 0.5rem;
+
+    p {
+      width: 80%;
+    }
   }
 }
 </style>

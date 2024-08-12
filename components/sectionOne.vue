@@ -2,11 +2,11 @@
   <main class="section-one">
     <div class="first-column">
       <h1>
-        {{ $t('section-one.building') }} <br> {{ $t('section-one.bridges') }} <br>
-        {{ $t('section-one.generational') }}
+        {{ $t('section_one.building') }} <br> {{ $t('section_one.bridges') }} <br>
+        {{ $t('section_one.generational') }}
       </h1>
       <p>
-        {{ $t('section-one.main-message') }}
+        {{ $t('section_one.main_message') }}
       </p>
       <div class="button-wrapper">
         <button class="btn btn-md">

@@ -1,18 +1,28 @@
 {
   "navbar": {
-    "the_project": "The project",
-    "some_histories": "Some stories",
-    "about_us": "About us"
+    "the_project": "The Project",
+    "some_histories": "Some Stories",
+    "about_us": "About Us"
   },
-  "section-one": {
+  "section_one": {
     "building": "Building",
-    "bridges": "bridges",
-    "generational": "generational",
-    "main-message": "We create spaces for dialogue between different generations."
+    "bridges": "Bridges",
+    "generational": "Generational",
+    "main_message": "We create spaces for dialogue between different generations."
+  },
+  "section_two": {
+    "title_one": "One Story at a Time",
+    "description_one": "We build a path together, one step at a time.",
+    "title_two": "Generate Social Progress",
+    "description_two": "We promote social development through education and the connection between generations.",
+    "title_three": "Share Life Stories",
+    "description_three": "We collect information in many formats and make it available to the world.",
+    "title_four": "Connect Generations",
+    "description_four": "We connect social extremes, linking the older generations with the younger ones."
   },
   "shared": {
-    "remember_me": "Remember me",
-    "i_want_participate": "I want to participate",
-    "what_we_do": "What we do?"
+    "remember_me": "Remember Me",
+    "i_want_participate": "I Want to Participate",
+    "what_we_do": "What We Do"
   }
 }
