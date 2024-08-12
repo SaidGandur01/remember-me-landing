@@ -1,1 +1,0 @@
-import{_ as o}from"./B8KobyMD.js";import{_ as s,v as a,z as n,L as c,x as e,t as _}from"./BP1xxxox.js";const r={},u=e("div",{class:"about-us-page"},[e("h1",null,"This is the about us page")],-1);function l(m,p){const t=o;return _(),a(c,null,[n(t),u],64)}const f=s(r,[["render",l]]);export{f as default};
