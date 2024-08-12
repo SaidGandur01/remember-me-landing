@@ -7,7 +7,7 @@
       <li class="menu-item hide">
         <a class="nav-link" @click="onRedirect('stories')">{{ $t('navbar.some_histories') }}</a>
       </li>
-      <li class="menu-item">
+      <li class="menu-item hide">
         <a class="nav-link" @click="onRedirect('about-us')">{{ $t('navbar.about_us') }}</a>
       </li>
     </ul>

@@ -7,7 +7,7 @@
       <div class="nav-list">
         <a class="nav-link" @click="onRedirect('project')">{{ $t('navbar.the_project') }}</a>
         <a class="nav-link hide" @click="onRedirect('stories')">{{ $t('navbar.some_histories') }}</a>
-        <a class="nav-link" @click="onRedirect('about-us')">{{ $t('navbar.about_us') }}</a>
+        <a class="nav-link hide" @click="onRedirect('about-us')">{{ $t('navbar.about_us') }}</a>
         <button v-if="false" @click="changeLanguage('en')">
           English
         </button>
