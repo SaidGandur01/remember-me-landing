@@ -2,19 +2,18 @@
   <main class="section-one">
     <div class="first-column">
       <h1>
-        Construyendo <br> puentes <br>
-        generacionales
+        {{ $t('section-one.building') }} <br> {{ $t('section-one.bridges') }} <br>
+        {{ $t('section-one.generational') }}
       </h1>
       <p>
-        Nuestro proyecto pretende abrir espacios de dialogo para las personas
-        mayores.
+        {{ $t('section-one.main-message') }}
       </p>
       <div class="button-wrapper">
         <button class="btn btn-md">
-          Quiero Participar
+          {{ $t('shared.i_want_participate') }}
         </button>
         <button class="btn btn-md outlined">
-          ¿Qué hacemos?
+          {{ $t('shared.what_we_do') }}
         </button>
       </div>
     </div>

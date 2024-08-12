@@ -1,10 +1,18 @@
 {
   "navbar": {
-    "the_project": "The Project",
-    "some_histories": "Some Stories",
-    "about_us": "About Us"
+    "the_project": "The project",
+    "some_histories": "Some stories",
+    "about_us": "About us"
+  },
+  "section-one": {
+    "building": "Building",
+    "bridges": "bridges",
+    "generational": "generational",
+    "main-message": "We create spaces for dialogue between different generations."
   },
   "shared": {
-    "i_want_participate": "I Want to Participate"
+    "remember_me": "Remember me",
+    "i_want_participate": "I want to participate",
+    "what_we_do": "What we do?"
   }
 }

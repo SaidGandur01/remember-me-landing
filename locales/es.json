@@ -4,8 +4,15 @@
     "some_histories": "Algunas historias",
     "about_us": "Acerca de nosotros"
   },
+  "section-one": {
+    "building": "Construyendo",
+    "bridges": "puentes",
+    "generational": "generacionales",
+    "main-message": "Construimos espacios de dialogos entre diferentes generaciones."
+  },
   "shared": {
     "remember_me": "Remember me",
-    "i_want_participate": "Quiero participar"
+    "i_want_participate": "Quiero participar",
+    "what_we_do": "¿Qué hacemos?"
   }
 }
