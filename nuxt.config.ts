@@ -65,6 +65,9 @@ export default defineNuxtConfig({
   plugins: [
     { src: '~/plugins/intersection-observer.client.ts', mode: 'client' }
   ],
+  build: {
+    transpile: ['vue-i18n']
+  },
   devtools: { enabled: false },
   vite: {
     plugins: [

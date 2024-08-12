@@ -2,13 +2,13 @@
   <div class="burger-container">
     <ul class="menu-list">
       <li class="menu-item">
-        <a class="nav-link">El Proyecto</a>
+        <a class="nav-link">{{ $t('navbar.the_project') }}</a>
       </li>
       <li class="menu-item">
-        <a class="nav-link">Algunas historias</a>
+        <a class="nav-link">{{ $t('navbar.some_histories') }}</a>
       </li>
       <li class="menu-item">
-        <a class="nav-link">Sobre Nosotros</a>
+        <a class="nav-link">{{ $t('navbar.about_us') }}</a>
       </li>
     </ul>
   </div>
