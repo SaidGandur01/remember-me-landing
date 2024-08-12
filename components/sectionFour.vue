@@ -202,7 +202,7 @@ onMounted(() => {
         gap: 1rem;
 
         &-name {
-          margin-top: 2.5rem;
+          margin-top: 2rem;
         }
 
         &-image-wrapper {
