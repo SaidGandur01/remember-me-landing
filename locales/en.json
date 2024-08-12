@@ -39,6 +39,15 @@
     "title_part_two": "Tracking",
     "main_message": "The stories will be categorized by content and age and can be assigned to student groups. You will be able to track their status and allow students to communicate."
   },
+  "section_six": {
+    "100_percent": "100%",
+    "free": "Free",
+    "message_part_one": "While there is no cost,",
+    "message_part_two": "you can make a donation.",
+    "message_part_three": "Help us create a better world.",
+    "change_amount": "Enter an amount",
+    "donate": "Donate"
+  },
   "shared": {
     "remember_me": "Remember Me",
     "i_want_participate": "I Want to Participate",

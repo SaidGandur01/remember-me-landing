@@ -25,7 +25,7 @@
 <script lang="ts" setup>
 const { t } = useTranslation()
 
-const items = [
+const items = computed(() => [
   {
     image: '/images/section-two/item-one.svg',
     title: t('section_two.title_one'),
@@ -46,9 +46,9 @@ const items = [
     title: t('section_two.title_four'),
     description: t('section_two.description_four')
   }
-]
+])
 
-const duplicatedItems = [...items, ...items]
+const duplicatedItems = [...items.value, ...items.value]
 
 const carousel = ref<HTMLElement | null>(null)
 const track = ref<HTMLElement | null>(null)

@@ -39,6 +39,15 @@
     "title_part_two": "alumnos",
     "main_message": "Las historias serán categorizadas por contenido y edad y podrán ser asignadas a grupos estudiantiles. Podrás seguir su estados y permitir a los alumnos comunicarse."
   },
+  "section_six": {
+    "100_percent": "100%",
+    "free": "Gratuito",
+    "message_part_one": "Si bien no hay costo,",
+    "message_part_two": "puedes hacer una donación.",
+    "message_part_three": "Ayudanos a crear un mundo mejor.",
+    "change_amount": "Escribe un monto",
+    "donate": "Donar"
+  },
   "shared": {
     "remember_me": "Remember me",
     "i_want_participate": "Quiero participar",

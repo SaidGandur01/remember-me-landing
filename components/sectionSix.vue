@@ -2,12 +2,12 @@
   <section ref="target" :class="{ 'in-view': inView }" class="section-six">
     <img :src="cloudImage" alt="cloud" class="cloud-image">
     <div class="information">
-      <h1>100%</h1>
-      <h1>Gratuito</h1>
+      <h1>{{ $t('section_six.100_percent') }}</h1>
+      <h1>{{ $t('section_six.free') }}</h1>
     </div>
     <div class="text">
-      <span>Si bien no hay costo, <strong>puedes hacer una donación.</strong></span>
-      <span>Necesitamos de tu ayuda para que este proyecto cobre vida.</span>
+      <span>{{ $t('section_six.message_part_one') }} <strong>{{ $t('section_six.message_part_two') }}</strong></span>
+      <span>{{ $t('section_six.message_part_three') }}</span>
     </div>
     <div class="donation">
       <button
@@ -35,14 +35,14 @@
         v-model="customAmount"
         type="text"
         class="donation-input"
-        placeholder="$ Escribe un monto"
+        :placeholder="t('section_six.change_amount')"
       >
       <button
         class="donation-button"
         :disabled="!isDonateEnabled"
         @click="handleDonate"
       >
-        Donar
+        {{ $t('section_six.donate') }}
       </button>
     </div>
     <form v-if="hash">
@@ -67,6 +67,7 @@ import { generateHash } from '~/utils/generateHash'
 
 const inView = ref(false)
 const { publicKey } = useEnvConfig()
+const { t } = useTranslation()
 const { target } = useIntersectionObserver(() => {
   inView.value = true
 })
