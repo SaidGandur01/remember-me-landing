@@ -9,10 +9,10 @@
         <a class="nav-link">{{ $t('navbar.some_histories') }}</a>
         <a class="nav-link">{{ $t('navbar.about_us') }}</a>
       </div>
-      <span class="title"> Remember me </span>
+      <span class="title">{{ $t('shared.remember_me') }}</span>
     </div>
     <button class="btn btn-md">
-      Quiero Participar
+      {{ $t('shared.i_want_participate') }}
     </button>
     <button
       :class="{ 'none menuButton': showMenu, menuButton: !showMenu }"
