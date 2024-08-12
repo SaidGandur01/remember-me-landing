@@ -8,8 +8,12 @@
         <a class="nav-link">{{ $t('navbar.the_project') }}</a>
         <a class="nav-link">{{ $t('navbar.some_histories') }}</a>
         <a class="nav-link">{{ $t('navbar.about_us') }}</a>
-        <button @click="changeLanguage('en')">English</button>
-        <button @click="changeLanguage('es')">Español</button>
+        <button v-if="false" @click="changeLanguage('en')">
+          English
+        </button>
+        <button v-if="false" @click="changeLanguage('es')">
+          Español
+        </button>
       </div>
       <span class="title">{{ $t('shared.remember_me') }}</span>
     </div>
